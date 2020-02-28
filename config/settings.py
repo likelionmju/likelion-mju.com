@@ -108,7 +108,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, 'app_name', 'static'),
+	os.path.join(BASE_DIR, 'page', 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
