@@ -3,16 +3,19 @@ mjuseoul.likelion.org
 
 📖 Introduction
 ---
+
 This project is a site for applying Likelion at MJU Seoul
 
-🏁 Start
+🏁 Getting started
 ---
+
 first of all, prepare a virtual environment with the django and several packages
 
 ### 1. create virtual environment
 ```bash
 $ python -m venv venv
 ```
+
 The name of virtual environment is defined by "venv"
 
 ### 2. activate virtual environment
@@ -25,13 +28,14 @@ $ source venv/bin/activate # for mac or linux
 ```bash
 $ pip install -r requirements.txt
 ```
-The required packages are defined in the requirements.txt file.
 
-If additional packages are installed, the following commands should be executed.
+The required packages are defined in the requirements.txt file.
 
 ```bash
 $ pip freeze > requirements.txt
 ```
+
+If additional packages are installed, the following commands should be executed.
 
 🧐 What's inside?
 ---
@@ -43,3 +47,6 @@ $ pip freeze > requirements.txt
     ├── README.md
     └── requirements.txt
 
+📝 License
+---
+This project uses the [MIT License](LICENSE)
