@@ -40,6 +40,7 @@ If additional packages are installed, the following commands should be executed.
 🧐 What's inside?
 ---
     .
+    ├── account
     ├── config
     ├── page
     ├── .gitignore
@@ -47,11 +48,12 @@ If additional packages are installed, the following commands should be executed.
     ├── README.md
     └── requirements.txt
 
-1. `/config`: setup files in project
-2. `/page`: app directory
-3. `.gitignore`: define what should be ignored in git
-4. `manage.py`: django command-line util
-5. `requirement.txt`: list of pip-packages to install
+1. `/account`: account app
+2. `/config`: setup files in project
+3. `/page`: page app
+4. `.gitignore`: define what should be ignored in git
+5. `manage.py`: django command-line util
+6. `requirement.txt`: list of pip-packages to install
 
 📝 License
 ---
