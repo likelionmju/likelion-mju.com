@@ -37,6 +37,25 @@ $ pip freeze > requirements.txt
 
 If additional packages are installed, the following commands should be executed.
 
+### 4. git command
+
+first time, you must change master branch to other branch
+
+```bash
+$ git checkout <branch_name> # backend or frontend
+```
+
+> Insert 'backend' or 'frontend' instead of <branch_name>.
+
+```bash
+$ git pull origin <branch_name>
+$ git add .
+$ git commit -m "messages"
+$ git push origin <branch_name>
+```
+> Use the same branch as above ('backend' or 'frontend')
+
+
 🧐 What's inside?
 ---
     .
