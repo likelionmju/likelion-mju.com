@@ -2,10 +2,9 @@
 
 h1 {
     text-align: center;
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
     color:white;
-
 }
 
 .login-page {
@@ -27,7 +26,7 @@ h1 {
   }
 
   .form input {
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     outline: 0;
     background:whitesmoke;
     width: 100%;
@@ -46,7 +45,7 @@ h1 {
     background: -moz-linear-gradient(right, rgb(13,60,109),rgb(13, 62, 114));
     background: -o-linear-gradient(right, rgb(13,60,109), rgb(13, 62, 114));
     background: linear-gradient(to left, rgb(13,60,109), rgb(13, 62, 114));
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
   }

@@ -14,9 +14,9 @@
 </head>
 <body>
     {% block content %}
-    <form action="{%url 'register'%}" method="POST">
+    <form action="{%url 'register'%}" method="POST" style="text-align: center; background-color: rgb(44, 91, 141); color:white;">
         {%csrf_token%}
-        <p>아이디</p>
+        <br><p>아이디(학번)</p>
         <input type="text" name="id">
         <p>비밀번호</p>
         <input type="password" name="pw">
@@ -31,10 +31,25 @@
             <option>여자</option>
         </select>
         <br><br><p>이메일</p>
-        <input type="text" name="email">
+        <input type="email" name="email">
         <input type="button" value="확인" onclick="location.href ='{%url 'checkmail'%}'">
+        <br><br>
         <p>보안코드 입력</p>
         <input type="text" name="securitycode">
+        <br><br><p>휴대폰번호</p>
+        <input type="text" name="phone_number">
+        <p>단과대학</p>
+        <input type="text" name="college">
+        <p>학과</p>
+        <input type="text" name="department">
+        <p>학년</p>
+        <select nama="grade">
+            <option>==선택==</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
         <br><br>
         <input type="submit" value="회원가입">
     </form> 
