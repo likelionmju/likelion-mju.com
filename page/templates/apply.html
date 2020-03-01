@@ -24,7 +24,7 @@
         </div>
 
         <div class="applicant_form">
-            <form method="post">
+            <form method="post" action="{% url 'apply' %}">
 
                 <input
                     type="hidden"
@@ -32,7 +32,7 @@
                 
                 <div class="explain">
                     <h4>지원서는 제출 후 수정이 되지 않습니다. 내용을 충분히 검토하신 후 제출해 주시길 바랍니다.<br>
-                        임시 저장이 가능하오니, 지원서 작성 시 참고하시기 바랍니다.</h2><hr>
+                        임시 저장이 가능하오니, 지원서 작성 시 참고하시기 바랍니다.</h4>
                 </div>
 
                 <div class="input-box">
