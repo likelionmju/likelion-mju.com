@@ -14,8 +14,27 @@
 </head>
 <body>
     {% block content %}
-    <!-- code here -->
-    <h1>register</h1>
+    <form action="{%url 'register'%}" method="POST">
+        {%csrf_token%}
+        <p>아이디</p>
+        <input type="text" name="id">
+        <p>비밀번호</p>
+        <input type="password" name="pw">
+        <p>비밀번호 확인</p>
+        <input type="password" name="pw2">
+        <p>이름</p>
+        <input type="text" name="name">
+        <p>성별</p>
+        <select name="gender">
+            <option>==선택==</option>
+            <option>남자</option>
+            <option>여자</option>
+        </select>
+        <br><br><p>이메일</p>
+        <input type="email" name="email">
+        <br><br>
+        <input type="submit" value="회원가입">
+    </form> 
     {% endblock %}
 </body>
 </html>
