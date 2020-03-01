@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     {% block title %}
-        MJU(Seoul) X Likelion
+        MJU(Seoul) X LIKELION
     {% endblock %}
 
     {% block link %}
@@ -16,10 +16,17 @@
     {% block content %}
     <form action="{%url 'login'%}" method="POST">
         {%csrf_token%}
-        <h1>MJU(Seoul) X Likelion</h1>
-        <input type="text" name="id" autocomplete="off"><br>
-        <input type="password" name="pw" autocomplete="off"><br>
-        <input type="submit" value="로그인">
+        <h1>MJU(Seoul) X LIKELION</h1>
+        <div class="login-page">
+            <div class="form">
+                <form class="login-form">
+                    <input type="text" name="id" autocomplete="off" placeholder="ID">
+                    <input type="password" name="pw" autocomplete="off" placeholder="PASSWORD">
+                    <input type="submit" value="LOGIN">
+                    <p class="message">Thank You.</p>
+                </form>
+            </div>
+        </div>
     </form>
     {% endblock %}
 </body>
