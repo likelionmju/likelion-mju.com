@@ -9,35 +9,45 @@ This project is a site for applying Likelion at MJU Seoul
 🏁 Getting started
 ---
 
-first of all, prepare a virtual environment with the django and several packages
+### 1. git clone
 
-### 1. create virtual environment
+First of all, clone this repository
+
+```bash
+$ git clone https://github.com/likelionmju/mjuseoul.likelion.org.git
+```
+
+### 2. create virtual environment
+
+Second, prepare a virtual environment with the django and several packages
+
 ```bash
 $ python -m venv venv
 ```
 
-The name of virtual environment is defined by "venv"
 
-### 2. activate virtual environment
+> The name of virtual environment is defined by "venv"
+
+### 3. activate virtual environment
 ```bash
 $ source venv/scripts/activate # for windows
 $ source venv/bin/activate # for mac or linux
 ```
 
-### 3. install pip packages
+### 4. install pip packages
 ```bash
 $ pip install -r requirements.txt
 ```
 
-The required packages are defined in the requirements.txt file.
+> The required packages are defined in the requirements.txt file.
 
 ```bash
 $ pip freeze > requirements.txt
 ```
 
-If additional packages are installed, the following commands should be executed.
+> If additional packages are installed, the following commands should be executed.
 
-### 4. git command
+### 5. change git branch
 
 first time, you must change master branch to other branch
 
@@ -47,14 +57,17 @@ $ git checkout <branch_name> # backend or frontend
 
 > Insert 'backend' or 'frontend' instead of <branch_name>.
 
+:octocat: Git command
+---
+
 ```bash
 $ git pull origin <branch_name>
 $ git add .
 $ git commit -m "messages"
 $ git push origin <branch_name>
 ```
-> Use the same branch as above ('backend' or 'frontend')
 
+> Insert 'backend' or 'frontend' instead of <branch_name>.
 
 🧐 What's inside?
 ---
