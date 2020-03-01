@@ -11,11 +11,49 @@
     {% block link %}
         {% static 'page\css\apply.css' %}
     {% endblock %}
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name='viewport' />
+    <link href="apply.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     {% block content %}
-    <!-- code here -->
-    <h1>apply</h1>
+    <main class="main_page">
+
+        <div class="apply">
+            <h1>멋쟁이 사자처럼 8기 <br>지원하기</h1>
+        </div>
+
+        <div class="applicant_form">
+            <form method="post">
+
+                <input
+                    type="hidden"
+                    name="apply">
+                
+                <div class="input-box">
+                    <label for="id_answer1">자기 소개 및 지원 동기</label>
+                    <textarea name="answer1" id="id_answer1" required="required"></textarea>
+                </div>
+
+                <div class="input-box">
+                    <label for="id_answer2">코딩 경험 (없으면 무엇을 배우고 싶은지)</label>
+                    <textarea name="answer2" id="id_answer2" required="required"></textarea>
+                </div>
+
+                <div class="input-box">
+                    <label for="id_answer3">포부 및 만들고 싶은 서비스</label>
+                    <textarea name="answer3" id="id_answer3" required="required"></textarea>
+                </div>
+
+                <div class="input-box">
+                    <label for="id_answer4">팀워크 경험 (역할 & 느낀점)</label>
+                    <textarea name="answer4" id="id_answer4" required="required"></textarea>
+                </div>
+
+                <button type="submit" class="btn_line">지원서 제출하기</button>
+            </form>
+        </div>
+    </main>
     {% endblock %}
 </body>
 </html>

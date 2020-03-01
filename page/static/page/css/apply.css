@@ -1,3 +1,113 @@
-h1{
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    background-color: rgb(13,60,109);
+}
+
+.apply {
     text-align: center;
+    color: whitesmoke;
+    margin-top: 5%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.applicant_form .input-box {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+
+}
+
+.input-box label {
+
+    font-weight: 800;
+    font-size: 23px;
+    color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.input-box textarea {
+    color: whitesmoke;
+    margin-top: 1%;
+    width: 100%;
+    height: 30rem;
+    line-height: 1.0;
+    font-size: 17px;
+    background-color: rgb(13, 62, 114);
+    border: 1px solid whitesmoke;
+}
+
+.btn_line {
+    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-left: 40%;
+    line-height: 50px;
+    text-align: center;
+    background: none;
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    font-size: 20px;
+    width: 250px;
+    font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+
+    .input-box textarea {
+        width: 21rem;
+        height: 15rem;
+        line-height: 1.0;
+        font-size: 18px;
+        margin-top: 3%;
+    }
+
+    .input-box label {
+
+        font-weight: 800;
+        font-size: 15.5px;
+        color: whitesmoke;
+
+    }
+
+    .applicant_form .input-box {
+        margin-left: 5%;
+        margin-top: 13%;
+        width: 80%;
+    }
+
+    .btn_line {
+
+        margin-left: 17%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+    .applicant_form .input-box {
+        margin-left: 5%;
+        margin-top: 5%;
+        width: 67%;
+        /* height: 100%; */
+
+    }
+    .input-box textarea {
+        width: 41rem;
+    }
+
+    .input-box label {
+
+        font-size: 18px;
+
+    }
+
+    .btn_line {
+
+        margin-left: 33%;
+
+    }
 }
