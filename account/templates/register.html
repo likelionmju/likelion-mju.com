@@ -31,6 +31,7 @@
             <option>여자</option>
         </select>
         <br><br><p>이메일</p>
+<<<<<<< HEAD
         <input type="email" name="email">
         <br><br><p>휴대폰번호</p>
         <input type="text" name="phone_number">
@@ -47,6 +48,13 @@
             <option>4</option>
         </select>
         <br><br>        
+=======
+        <input type="text" name="email">
+        <input type="button" value="확인" onclick="location.href ='{%url 'checkmail'%}'">
+        <p>보안코드 입력</p>
+        <input type="text" name="securitycode">
+        <br><br>
+>>>>>>> 35aa697554c76cdbf4227129785074831f328347
         <input type="submit" value="회원가입">
     </form> 
     {% endblock %}
