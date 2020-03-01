@@ -4,7 +4,7 @@ from django.contrib.auth.models import (
 )
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, number, name, gender, phone, college, major, grade, password=None):
+    def create_user(self, email, number, name, gender, phone, college, department, grade, password=None):
 
         if not email:
             raise ValueError(_('Users must have an email address'))
@@ -16,7 +16,7 @@ class UserManager(BaseUserManager):
             gender = gender,
             phone = phone,
             college = college,
-            major = major,
+            department = department,
             grade = grade,
         )
 
@@ -24,7 +24,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, number, name, gender, phone, college, major, grade, password):
+    def create_superuser(self, email, number, name, gender, phone, college, department, grade, password):
 
         user = self.create_user(
             email=email,
@@ -34,7 +34,7 @@ class UserManager(BaseUserManager):
             gender = gender,
             phone = phone,
             college = college,
-            major = major,
+            department = department,
             grade = grade,
         )
 
@@ -75,7 +75,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=15,
         null=True
     )
-    major = models.CharField(
+    department = models.CharField(
         verbose_name = '전공',
         max_length=15,
         null=True
@@ -94,7 +94,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         'phone',
         'email',
         'college', 
-        'major',
+        'department',
         'grade'
     ]
 
