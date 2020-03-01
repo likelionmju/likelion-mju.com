@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
-from .models import UserManager
+from .models import User
 
 def login(request):
     if request.method =='POST':
@@ -11,7 +11,7 @@ def login(request):
         pw = request.POST['pw']
         user = auth.authenticate(request,username=id,password=pw)
         if user is not None:
-            auth.login(request,user)
+            auth.login(request, user)
             return redirect('home')
         else:
             return render(request,'login.html')
@@ -22,11 +22,18 @@ def login(request):
 def register(request):
     if request.method == 'POST':
         if request.POST['pw'] == request.POST['pw2']:
-            client = UserManager()
-            user = client.create_user(email = request.POST['email'],number = request.POST['id'],name = request.POST['name']
-            ,gender=request.POST['gender'],phone = request.POST['phone_number'],college=request.POST['college'],department = request.POST['department']
-            ,grade = request.POST['grade'],password= request.POST['pw'])
-            auth.login(request,user)
+            user = User.objects.create_user(
+                email = request.POST['email'],
+                number = request.POST['id'],
+                name = request.POST['name'],
+                gender=request.POST['gender'],
+                phone = request.POST['phone_number'],
+                college=request.POST['college'],
+                department = request.POST['department'],
+                grade = request.POST['grade'],
+                password = request.POST['pw']
+            )
+            auth.login(request, user)
             return redirect('home')
     return render(request, 'register.html')
 
