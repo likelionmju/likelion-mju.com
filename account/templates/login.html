@@ -14,8 +14,13 @@
 </head>
 <body>
     {% block content %}
-    <!-- code here -->
-    <h1>login</h1>
+    <form action="{%url 'login'%}" method="POST">
+        {%csrf_token%}
+        <h1>MJU(Seoul) X Likelion</h1>
+        <input type="text" name="id" autocomplete="off"><br>
+        <input type="password" name="pw" autocomplete="off"><br>
+        <input type="submit" value="로그인">
+    </form>
     {% endblock %}
 </body>
 </html>
