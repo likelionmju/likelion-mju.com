@@ -16,8 +16,14 @@
 </head>
 <body>
     {% block content %}
+<<<<<<< HEAD
     <form action="{%url 'register'%}" method="POST" style="text-align: center;
     font-weight: bold; background-color: rgb(44, 91, 141); color:white; font-weight: bold;">
+=======
+    <br>
+    <h1>Register</h1>
+    <form action="{%url 'register'%}" method="POST" style="text-align: center;">
+>>>>>>> 1775e70fd4d8b03e637f87f7d9bbece8d6aab23f
         {%csrf_token%}
         <br><h1 align=left>회원가입</h1>
         <br><br><p>아이디(학번)</p>
@@ -35,11 +41,15 @@
         </select>
         <br><br><p>이메일</p>
         <input type="email" name="email">
+<<<<<<< HEAD
         <a href="{%url 'checkmail'%}"><input type="button" value="확인"></a>
         <br><br>
         <p>보안코드 입력</p>
         <input type="text" name="securitycode">
         <br><br><p>전화번호</p>
+=======
+        <br><br><p>휴대폰번호</p>
+>>>>>>> 1775e70fd4d8b03e637f87f7d9bbece8d6aab23f
         <input type="text" name="phone_number">
         <p>단과대학</p>
         <select name="college">
