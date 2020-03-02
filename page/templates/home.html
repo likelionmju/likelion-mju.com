@@ -58,7 +58,15 @@
                     </div>
                 </p>
                 <p class="lead">
-                    <a href="{% url 'apply' %}" class="btn btn-lg btn-secondary">지원하기</a>
+                    <a href="
+                    {% if user.is_authenticated %}
+                        {% url 'apply' %}
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                        {% url 'login' %}
+                    {% endif %}
+                    "
+                    class="btn btn-lg btn-secondary">지원하기</a>
                 </p>
                 
             </main>

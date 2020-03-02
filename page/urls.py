@@ -1,8 +1,8 @@
-from django.urls import path,include
+from django.urls import path
 from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('apply/', views.apply, name='apply'),
-    path('account/',include('account.urls'),name="account"),
+    path('apply/complete/', views.complete, name='complete'),
 ]
