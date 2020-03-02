@@ -1,3 +1,19 @@
+body {
+    background: rgb(13,60,109); /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, rgb(13,60,109), rgb(13, 62, 114));
+    background: -moz-linear-gradient(right, rgb(13,60,109),rgb(13, 62, 114));
+    background: -o-linear-gradient(right, rgb(13,60,109), rgb(13, 62, 114));
+    background: linear-gradient(to left, rgb(13,60,109), rgb(13, 62, 114));
+    font-family: "Montserrat", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;      
+}
+
 h1 {
     text-align: center;
+    color:white;
+}
+
+form {
+    color:white;
 }

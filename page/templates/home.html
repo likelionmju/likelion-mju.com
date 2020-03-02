@@ -28,7 +28,6 @@
           }
         }
     </style>
-    <link href="cover.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
@@ -46,16 +45,7 @@
                 <hr width="40%" color="black">
                 <p class="lead">
                     <div class="content">
-                        <img src="" alt="">
-                        강이 보이면 리버뷰
-                    </div>
-                    <div class="content">
-                        <img src="" alt="">
-                        바다가 보이면 오션뷰
-                    </div>
-                    <div class="content">
-                        <img src="" alt="">
-                        정훈반이 보이면 알라뷰,,,
+                        <img src="{% static 'page/images/Main_Page.jpg'%}" alt="Main_Page.jpg">
                     </div>
                 </p>
                 <p class="lead">
@@ -69,17 +59,17 @@
                     "
                     class="btn btn-lg btn-secondary">지원하기</a>
                 </p>
+                
             </main>
+            <footer>
+                <div class="inner">
+                    <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
+                    <div class="sns">
+                    <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
+                    <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
+                </div>
+            </footer>
          </div>
-
-        <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
-                <div class="sns">
-                <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
-                <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
-            </div>
-        </footer>
         </div>
     </body>
     {% endblock %}

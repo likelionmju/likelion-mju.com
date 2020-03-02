@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+
+body {
+	font-family: "Montserrat", sans-serif;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    background: rgb(13,60,109); 
+}
+
+* {
+	font-family: "Montserrat", sans-serif !important;
+}
+
+.title{
+  position: relative;
+  color: #ffffff;
+  font-size: 8em;
+  line-height: 1.1em;
+  outline: none;
+  text-align: center;
+  user-select: none;
+  text-shadow: -1px 1px #cacaca,
+    -2px 2px #cacaca,
+    -3px 3px #cacaca,
+    -4px 4px #cacaca,
+    -5px 5px #cacaca,
+    -6px 6px #cacaca,
+    -7px 7px #cacaca,
+    -8px 8px #cacaca,
+    -9px 9px #cacaca,
+    -10px 10px #cacaca,
+    -11px 11px #cacaca,
+    -12px 12px #cacaca,
+    -20px 20px rgb(0,0,0,0.4);
+}
+
+h3{
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .title{
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        color: #ffffff;
+        font-size: 2em;
+        line-height: normal;
+        outline: none;
+        text-align: center;
+        user-select: none;
+        text-shadow: -0.078em 0.078em #cacaca;
+      }
+    
+      h3{
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        font-size: 0.55em;
+        text-align: center;
+    }
+}

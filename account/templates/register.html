@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +10,15 @@
     {% block link %}
         {% static 'account\css\register.css' %}
     {% endblock %}
+    .a { 
+        text-indent:2em;
+    }
 </head>
 <body>
     {% block content %}
-    <form action="{%url 'register'%}" method="POST" style="text-align: center; background-color: rgb(44, 91, 141); color:white;">
+    <br>
+    <h1>회원가입</h1>
+    <form action="{%url 'register'%}" method="POST" style="text-align: center;">
         {%csrf_token%}
         <br><p>아이디(학번)</p>
         <input type="text" name="id">
@@ -26,8 +30,8 @@
         <input type="text" name="name">
         <p>성별</p>
         <select name="gender">
-            <option>남자</option>
-            <option>여자</option>
+            <option>남성</option>
+            <option>여성</option>
         </select>
         <br><br><p>이메일</p>
         <input type="email" name="email">
