@@ -19,8 +19,7 @@ def apply(request):
         else:
             application.is_submit = True
         application.save()
-        # 나중에 home.html 페이지 바꿀거지롱롱링링
-        return render(request, 'home.html')
+        return render(request, 'complete.html')
     else:
         try:
             myapplication = request.user.application
@@ -32,6 +31,3 @@ def apply(request):
                           {'answer1': answer1, 'answer2': answer2, 'answer3': answer3, 'answer4': answer4})
         except Application.DoesNotExist:
             return render(request, 'apply.html')
-
-def complete(request):
-    return render(request, 'complete.html')
