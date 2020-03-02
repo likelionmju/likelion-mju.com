@@ -37,8 +37,6 @@ def register(request):
             return redirect('home')
     return render(request, 'register.html')
 
-
-
 def logout(request):
         auth.logout(request)
         return redirect('login')

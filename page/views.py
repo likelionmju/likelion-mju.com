@@ -6,3 +6,6 @@ def home(request):
 
 def apply(request):
     return render(request, 'apply.html')
+
+def complete(request):
+    return render(request, 'complete.html')
