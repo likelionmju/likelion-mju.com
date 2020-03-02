@@ -25,20 +25,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'apply' %}" style="font-family:Montserrat, sans-serif;">APPLY</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family:Montserrat, sans-serif;">
-                MY PAGE
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% if not user.is_authenticated %}
-                <a class="dropdown-item" href="{% url 'login' %}" style="font-family:Montserrat, sans-serif;">LOGIN</a>
-                {% endif %}
-                {% if user.is_authenticated %}
+              {% if user.is_authenticated %}
                 <a class="dropdown-item" href="{%url 'logout'%}" style="font-family:Montserrat, sans-serif;">LOGOUT</a>
-                {% endif %}
-              </div>
+              {% endif %}
             </li>
           </ul>
         </div>

@@ -30,7 +30,7 @@ def register(request):
                 phone = request.POST['phone_number'],
                 college=request.POST['college'],
                 department = request.POST['department'],
-                grade = request.POST['grade'],
+                grade = request.POST['grade'][0],
                 password = request.POST['pw']
             )
             auth.login(request, user)
