@@ -1,23 +1,24 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
+from django.contrib.auth.hashers import check_password
 from django.contrib import auth
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from .models import User
 
 def login(request):
+    context = {}
     if request.method =='POST':
-        id = request.POST['id']
-        pw = request.POST['pw']
-        user = auth.authenticate(request,username=id,password=pw)
-        if user is not None:
-            auth.login(request, user)
-            return redirect('home')
+        if User.objects.filter(number=request.POST['id']).exists():
+            user = User.objects.get(number=request.POST['id'])
+            if check_password(request.POST['pw'], user.password):
+                auth.login(request, user)
+                return redirect('apply')
+            else:
+                context.update({'error':'incorrect password'})
         else:
-            return render(request,'login.html')
-    else:
-        return render(request,'login.html')
-    return render(request, 'login.html')
+            context.update({'error':'undefined user'})
+    return render(request, 'login.html', context)
 
 def register(request):
     if request.method == 'POST':
