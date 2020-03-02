@@ -34,3 +34,6 @@ def apply(request):
 
 def complete(request):
     return render(request, 'complete.html')
+
+def intro(request):
+    return render(request, 'intro.html')
