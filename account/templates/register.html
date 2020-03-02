@@ -10,16 +10,17 @@
     {% block link %}
         {% static 'account\css\register.css' %}
     {% endblock %}
-    .a { 
-        text-indent:2em;
-    }
 </head>
 <body>
     {% block content %}
     <br>
-    <h1>회원가입</h1>
+    <h1>회원가입</h1> 
     <form action="{%url 'register'%}" method="POST" style="text-align: center;">
         {%csrf_token%}
+        <div class="textbox">
+            <label for="ex_input">아이디</label>
+            <input type="text" id="ex_input">
+        </div>
         <br><p>아이디(학번)</p>
         <input type="text" name="id">
         <p>비밀번호</p>
