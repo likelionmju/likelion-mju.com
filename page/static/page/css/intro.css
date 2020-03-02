@@ -2,14 +2,14 @@
 * core styles
 */
 
-body{
+html{
   font-family: 'PT Serif';
   font-weight: bold;
   font-size: 2.6em;
 }
 
 .section__item{
-  transform: rotate(-11deg) translate(-50%, -50%);
+  transform: rotate(-11deg) translate(-50%, -70%);
   text-align: center;
   position: absolute;
   top: 50%;
@@ -196,3 +196,11 @@ a.sm-link{
 .sm-link9:hover::after{
   transform: translate3d(0, 0, 0);  
 }
+
+@media screen and (max-width: 768px) {
+  html {
+     font-family: 'PT Serif';
+     font-weight: bold;
+     font-size: 1.3em;
+    }
+ }
