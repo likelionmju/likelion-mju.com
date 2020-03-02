@@ -31,3 +31,6 @@ def apply(request):
                           {'answer1': answer1, 'answer2': answer2, 'answer3': answer3, 'answer4': answer4})
         except Application.DoesNotExist:
             return render(request, 'apply.html')
+
+def complete(request):
+    return render(request, 'complete.html')
