@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,33 +14,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'page/css/base.css' %}">
     <link rel="stylesheet" href="{% block link %} {% endblock %}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="/">MJU X Likelion</a>
+        <a class="navbar-brand" href="/" style="color: rgb(44, 91, 141); font-family:Montserrat, sans-serif; font-weight: bold;">
+          MJU X LIKELION</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'apply' %}">지원하기</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                계정
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% if not user.is_authenticated %}
-                <a class="dropdown-item" href="{% url 'register' %}">회원가입</a>
-                <a class="dropdown-item" href="{% url 'login' %}">로그인</a>
-                {% endif %}
-                {% if user.is_authenticated %}
-                <a class="dropdown-item" href="{%url 'logout'%}">로그아웃</a>
-                {% endif %}
-              </div>
+              {% if user.is_authenticated %}
+                <a class="dropdown-item" href="{%url 'logout'%}" style="font-family:Montserrat, sans-serif;">LOGOUT</a>
+              {% endif %}
             </li>
           </ul>
         </div>

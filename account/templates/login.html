@@ -17,6 +17,7 @@
     <form action="{%url 'login'%}" method="POST">
         {%csrf_token%}
         <br>
+        <br>
         <h1>MJU(SEOUL) X LIKELION</h1>
         <div class="login-page">
             <div class="form">
@@ -24,7 +25,9 @@
                     <input type="text" name="id" autocomplete="off" placeholder="ID">
                     <input type="password" name="pw" autocomplete="off" placeholder="PASSWORD">
                     <input type="submit" value="LOGIN" style="background-color: rgb(44, 91, 141); color:white">
-                    <p class="message">THANK YOU</p>
+                    <p class="message" style="color: #b3b3b3;">Not registered?
+                        <a href="{% url 'register' %}" style="color: rgb(44, 91, 141);">Create an account</a>
+                    </p>
                 </form>
             </div>
         </div>
