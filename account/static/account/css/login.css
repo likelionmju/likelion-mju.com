@@ -49,7 +49,7 @@ h1 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
   }
-  p{
-    color:rgb(44, 91, 141);
-    font-weight: bold;
+ 
+  .message{
+    font-family:"Montserrat", sans-serif;
   }
