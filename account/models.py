@@ -4,7 +4,7 @@ from django.contrib.auth.models import (
 )
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, number, name, gender, phone, college, department, grade, password=None):
+    def create_user(self, email, number, name, gender, phone, college, department, grade,rand,user_is_active, password=None):
 
         if not email:
             raise ValueError(_('Users must have an email address'))
@@ -18,13 +18,15 @@ class UserManager(BaseUserManager):
             college = college,
             department = department,
             grade = grade,
+            rand = rand,
+            user_is_active = user_is_active,
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, number, name, gender, phone, college, department, grade, password):
+    def create_superuser(self, email, number, name, gender, phone, college, department, grade, rand,user_is_active,password):
 
         user = self.create_user(
             email=email,
@@ -36,6 +38,8 @@ class UserManager(BaseUserManager):
             college = college,
             department = department,
             grade = grade,
+            rand = rand,
+            user_is_active = user_is_active,
         )
 
         user.is_superuser = True
@@ -84,7 +88,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = '학년',
         null=True
     )
+    rand = models.IntegerField(
+        verbose_name = 'code',
+        null = True,
+    )
     
+    user_is_active= models.IntegerField(
+        verbose_name = 'user_is_active',
+        null = True,
+    )
+
     objects = UserManager()
 
     USERNAME_FIELD = 'number'
@@ -95,7 +108,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         'email',
         'college', 
         'department',
-        'grade'
+        'grade',
+        'rand',
+        'user_is_active',
     ]
 
     def __str__(self):
