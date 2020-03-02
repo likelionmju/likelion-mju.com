@@ -2,11 +2,61 @@ h1 {
     text-align: center;
 }
 
-body{
-    font-family: "Montserrat"
+footer{
+  background-color: rgb(245, 245, 245);
 }
 
 footer img {
     width: 30px;
     height: 30px;
 }
+
+.content{
+  align-items: center;
+}
+
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #fff; 
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: rgb(13, 60, 109);
+  border: .05rem solid #fff;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat";
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+/*
+ Scroll Fade in 
+ */
+
