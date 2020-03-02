@@ -25,7 +25,7 @@
 
         <div class="applicant_form">
             <form method="post" action="{% url 'apply' %}">
-
+                {% csrf_token %}
                 <input
                     type="hidden"
                     name="apply">
@@ -37,25 +37,26 @@
 
                 <div class="input-box">
                     <label for="id_answer1">자기 소개와 함께 멋쟁이사자처럼에 지원하게 된 동기를 적어 주세요. (500자 이내)</label>
-                    <textarea name="answer1" id="id_answer1" required="required"></textarea>
+                    <textarea name="answer1" id="id_answer1" required="required">{{ answer1 }}</textarea>
                 </div>
 
                 <div class="input-box">
                     <label for="id_answer2">기억에 남는 프로그래밍 경험과 느낀 점에 대해 적어 주세요. 만약 프로그래밍 경험이 없다면, <br>어떤 언어를 배우고 싶은지 적어 주세요. (500자 이내)</label>
-                    <textarea name="answer2" id="id_answer2" required="required"></textarea>
+                    <textarea name="answer2" id="id_answer2" required="required">{{ answer2 }}</textarea>
                 </div>
 
                 <div class="input-box">
                     <label for="id_answer3">멋쟁이사자처럼에서 이루고 싶은 목표 및 만들고 싶은 서비스에 대해 설명해 주세요. (500자 이내)</label>
-                    <textarea name="answer3" id="id_answer3" required="required"></textarea>
+                    <textarea name="answer3" id="id_answer3" required="required">{{ answer3 }}</textarea>
                 </div>
 
                 <div class="input-box">
                     <label for="id_answer4">본인이 참여했던 팀 활동 중 가장 기억에 남는 경험과 느낀 점을 적어 주세요. (500자 이내)</label>
-                    <textarea name="answer4" id="id_answer4" required="required"></textarea>
+                    <textarea name="answer4" id="id_answer4" required="required">{{ answer4 }}</textarea>
                 </div>
 
-                <button type="submit" class="btn_line">지원서 제출하기</button>
+                <button type="submit" name="btn" value="save" class="btn_line">임시저장</button>
+                <button type="submit" name="btn" value="submit" class="btn_line">지원서 제출하기</button>
             </form>
         </div>
     </main>
