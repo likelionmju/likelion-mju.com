@@ -1,3 +1,8 @@
+@import url(https://fonts.google.com/specimen/Do+Hyeon?selection.family=Do+Hyeon)
+
 h1 {
     text-align: center;
+    font-family: 'Do Hyeon', ;
+    font-weight: bold;
 }
+
