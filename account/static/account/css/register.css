@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-@import url(https://fonts.google.com/specimen/Do+Hyeon?selection.family=Do+Hyeon)
-
-h1 {
-    text-align: center;
-    font-family: 'Do Hyeon', ;
-    font-weight: bold;
-}
-
-=======
 body {
     background: rgb(13,60,109); /* fallback for old browsers */
     background: -webkit-linear-gradient(right, rgb(13,60,109), rgb(13, 62, 114));
@@ -27,4 +17,3 @@ h1 {
 form {
     color:white;
 }
->>>>>>> 1775e70fd4d8b03e637f87f7d9bbece8d6aab23f
