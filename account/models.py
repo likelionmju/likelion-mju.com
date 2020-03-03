@@ -19,7 +19,6 @@ class UserManager(BaseUserManager):
             department = department,
             grade = grade,
         )
-
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -37,8 +36,8 @@ class UserManager(BaseUserManager):
             department = department,
             grade = grade,
         )
-
         user.is_superuser = True
+        user.is_active = True
         user.save(using=self._db)
         return user
 
@@ -84,6 +83,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = '학년',
         null=True
     )
+
+    is_active = models.BooleanField(default=False)
     
     objects = UserManager()
 
@@ -101,8 +102,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.name
 
+    def has_perm(self, perm, obj=None):
+        return True
+
+    def has_module_perms(self, app_label):
+        return True
+
     @property
     def is_staff(self):
-        "Is the user a member of staff?"
-        # Simplest possible answer: All superusers are staff
         return self.is_superuser
