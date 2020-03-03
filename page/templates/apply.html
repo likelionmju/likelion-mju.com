@@ -18,52 +18,58 @@
 <body>
     {% block content %}
     <main class="main_page">
-
-        <div class="apply">
-            <h1>멋쟁이 사자처럼 8기 <br>지원하기</h1><br><br>
+        <div class="wrapper">
+    
+          <div class="logo"><img src="C:\Users\mycas\OneDrive\바탕 화면\백준알고리즘\likelionmju_logo.png"></div>
+          <div class="explain"><span class="title_name">멋쟁이 사자처럼 at 명지대 신청서</span><br><br><span class="explain_title">지원 시 유의사항</span>
+            <p class="explain_cotent">
+            1. 멋쟁이사자처럼 at 명지대(서울) 8기에 지원하기 위해서는 회원가입과 로그인이 필요합니다.<br>
+            2. 회원가입은 '명지대(서울) 8기 지원'을 위함이며, 멋쟁이사자처럼 본부에 등록하는 것이 아님을 알려드립니다.<br>
+            3. 지원서는 제출 후 확인 / 수정이 불가합니다. <br>　지원자 여러분께서는 <strong>임시 저장</strong> 기능을 활용해 충분히
+             검토하신 후 제출하시기 바랍니다.<br>
+            4. 선발 일정과 방식에 관련한 정보는 메인 페이지를 참고해 주시기 바랍니다.<br>
+            5. 메인 페이지의 <strong>유의 사항</strong>을 꼭 확인하시고 지원해 주시기 바랍니다.<br>
+            </p></div>
         </div>
-
+       
+    
         <div class="applicant_form">
             <form method="post" action="{% url 'apply' %}">
                 {% csrf_token %}
                 <input
                     type="hidden"
                     name="apply">
-                
-                <div class="explain">
-                    <span>지원 시 유의사항</span>
-                    <p>
-                    1. 멋쟁이사자처럼 at 명지대(서울) 8기에 지원하기 위해서는 회원가입과 로그인이 필요합니다.<br>
-                    2. 회원가입은 '명지대(서울) 8기 지원'을 위함이며, 멋쟁이사자처럼 본부에 등록하는 것이 아님을 알려드립니다.<br>
-                    3. 지원서는 제출 후 확인 / 수정이 불가합니다. 지원자 여러분께서는 <strong>임시 저장</strong> 기능을 활용해 충분히
-                     검토하신 후 제출하시기 바랍니다.<br>
-                    4. 선발 일정과 방식에 관련한 정보는 메인 페이지를 참고해 주시기 바랍니다.<br>
-                    5. 메인 페이지의 <strong>유의 사항</strong>을 꼭 확인하시고 지원해 주시기 바랍니다.<br>
-                    </p>
-                </div>
-
+    
                 <div class="input-box">
-                    <label for="id_answer1">자기 소개와 함께 멋쟁이사자처럼에 지원하게 된 동기를 적어 주세요. (500자 이내)</label>
+                    <label for="id_answer1">1. 자기 소개와 함께 멋쟁이사자처럼에 지원하게 된 동기를 적어 주세요. (500자 이내)</label>
                     <textarea name="answer1" id="id_answer1" required="required">{{ answer1 }}</textarea>
                 </div>
-
+    
                 <div class="input-box">
-                    <label for="id_answer2">기억에 남는 프로그래밍 경험과 느낀 점에 대해 적어 주세요. 만약 프로그래밍 경험이 없다면, <br>어떤 언어를 배우고 싶은지 적어 주세요. (500자 이내)</label>
+                    <label for="id_answer2">2. 기억에 남는 프로그래밍 경험과 느낀 점에 대해 적어 주세요. 만약 프로그래밍 경험이 없다면, 어떤 언어를 배우고 싶은지 적어 주세요. (500자 이내)</label>
                     <textarea name="answer2" id="id_answer2" required="required">{{ answer2 }}</textarea>
                 </div>
-
+    
                 <div class="input-box">
-                    <label for="id_answer3">멋쟁이사자처럼에서 이루고 싶은 목표 및 만들고 싶은 서비스에 대해 설명해 주세요. (500자 이내)</label>
+                    <label for="id_answer3">3. 멋쟁이사자처럼에서 이루고 싶은 목표 및 만들고 싶은 서비스에 대해 설명해 주세요. (500자 이내)</label>
                     <textarea name="answer3" id="id_answer3" required="required">{{ answer3 }}</textarea>
                 </div>
-
+    
                 <div class="input-box">
-                    <label for="id_answer4">본인이 참여했던 팀 활동 중 가장 기억에 남는 경험과 느낀 점을 적어 주세요. (500자 이내)</label>
+                    <label for="id_answer4">4. 본인이 참여했던 팀 활동 중 가장 기억에 남는 경험과 느낀 점을 적어 주세요. (500자 이내)</label>
                     <textarea name="answer4" id="id_answer4" required="required">{{ answer4 }}</textarea>
                 </div>
-
-                <button type="submit" name="btn" value="save" class="btn_line">임시저장</button>
-                <button type="submit" name="btn" value="submit" class="btn_line">지원서 제출하기</button>
+                <div class="input-box">
+                    <label for="id_answer5">5. 지원자의 포트폴리오(디자이너-필수 / 개발자-선택), 2020-1학기 강의시간표, 개인 일정을 하나의 폴더에 넣어 zip 파일로 제출해주시기 바랍니다.
+                        폴더명은 '학번_이름'입니다.</label>
+                    <input class="file" type="file" name="file" id="id_file" onchange="checkSize(this)">
+                </div>
+                <div class="btn">
+    
+                  <button class="save" type="submit" name="btn" value="save" class="btn_line">임시저장</button>
+                  <button class="submit" type="submit" name="btn" value="submit" class="btn_line">지원서 제출하기</button>
+                </div>
+                
             </form>
         </div>
     </main>
