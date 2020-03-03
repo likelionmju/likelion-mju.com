@@ -1,3 +1,16 @@
+
+@import url(https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap);
+
+.apply-letter{
+  text-align: center;
+  font-weight: bold;
+  font-size: 3em;
+  font-family:'Do Hyeon', sans-serif;
+  color : rgb(13, 60, 109);
+}
+
+.btnbtn-lg btn-primary
+
 h1 {
     text-align: center;
 }
@@ -122,3 +135,5 @@ body {
     margin-top: 7rem;
   }
 }
+
+
