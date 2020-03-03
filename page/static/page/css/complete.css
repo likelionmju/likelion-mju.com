@@ -10,7 +10,11 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-    background: rgb(13,60,109); 
+    background: rgb(13,60,109);
+    background: -webkit-linear-gradient(right, rgb(13,60,109), rgb(13, 62, 114));
+    background: -moz-linear-gradient(right, rgb(13,60,109),rgb(13, 62, 114));
+    background: -o-linear-gradient(right, rgb(13,60,109), rgb(13, 62, 114));
+    background: linear-gradient(to left, rgb(13,60,109), rgb(13, 62, 114));
 }
 
 * {
