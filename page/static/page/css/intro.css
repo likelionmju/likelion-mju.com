@@ -70,6 +70,8 @@
   html {
      font-family: 'PT Serif';
      font-weight: bold;
-     font-size: 1.3em;
     }
- }
+  .loading span{
+    font-size: 1.3em;
+  }
+}
