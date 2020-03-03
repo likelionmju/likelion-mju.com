@@ -1,14 +1,3 @@
-/*
-* core styles
-*/
-
-html{
-  font-family: 'PT Serif';
-  font-weight: bold;
-  font-size: 1.3em;
-}
-
-
  /* Loading page */
 
  *{
@@ -31,6 +20,7 @@ html{
     animation: s1 3s linear infinite;
     box-sizing: border-box;
     border-radius: 50%;
+    z-index: 1000; /* layer position */
   }
   
   .loading::before,.loading::after{
@@ -52,6 +42,9 @@ html{
     transform: rotate(240deg);
   }
   .loading span{
+    font-family: 'PT Serif';
+    font-weight: bold;
+    font-size: 1.3em;
     line-height: 200px;
     animation: s2 3s linear infinite;
     position: absolute;
