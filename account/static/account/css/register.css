@@ -5,6 +5,7 @@ body
 h1 {
     text-align: ceneter;
     color:rgb(13, 60, 109);
+    margin-left: 3em;
 }
 
 form {
@@ -12,14 +13,15 @@ form {
 }
 
 input{
-    border: 20px;
+    border: thick dotted
     border-radius: 0px solid;
     height: 60px;
     width: 500px;
-    font-size: 12pt;
+    font-size: 18pt;
     text-align: center;
     color: rgb(13, 60, 109);
-    background: rgb(13, 60, 109);
+    background: white;
+    border-color: rgb(13, 60, 109);
     padding: 7px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
