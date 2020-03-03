@@ -60,7 +60,7 @@ def register(request):
     return render(request, 'register.html')
 
 def sendmail(address, link):
-    title = "멋쟁이사자처럼 at 명지대(서울) 계정 인증"
+    title = "[멋쟁이사자처럼] 계정 인증 안내 메일입니다"
     html_message = render_to_string('mail_template.html', link)
     email = EmailMessage(title, html_message, to=[address])
     email.content_subtype = "html"
