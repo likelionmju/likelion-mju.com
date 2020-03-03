@@ -55,7 +55,7 @@
         <li data-target="#myCarousel" data-slide-to="4"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active" data-interval="2000">
+        <div class="carousel-item active">
           <div class="container">
             <div class="carousel-caption">
               <img src="{% static 'page/images/Schedule_2.PNG' %}" class="d-block w-100" alt="Schedule_2.PNG">
@@ -81,7 +81,7 @@
 
         <div class="carousel-item">
           <div class="container">
-            <div class="carousel-caption">
+            <div class="carousel-caption" data-interval="400">
               <img src="{% static 'page/images/Apply_2.PNG' %}" class="d-block w-100" alt="Apply_2.PNG">
             </div>
           </div>
@@ -117,6 +117,11 @@
       </div>
   </footer>
   <script src="{% static 'page/js/home.js' %}" type="text/javascript"></script>
+  <script>
+    $('.carousel').carousel({
+      interval: 1800
+    });
+  </script>
 </body>
 {% endblock %}
 
