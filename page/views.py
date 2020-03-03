@@ -23,6 +23,8 @@ def apply(request):
     else:
         try:
             myapplication = request.user.application
+            if myapplication.is_submit == True:
+                return render(request, 'home.html')
             answer1 = myapplication.answers['answer1']
             answer2 = myapplication.answers['answer2']
             answer3 = myapplication.answers['answer3']
