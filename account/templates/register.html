@@ -16,24 +16,6 @@
     <br>
     <h1>회원가입</h1> 
     <form action="{%url 'register'%}" method="POST" style="text-align: center;">
-       <style> input{
-            border: 20px;
-            border-radius: 0px solid;
-            height: 60px;
-            width: 500px;
-            font-size: 12pt;
-            text-align: center;
-            color: rgb(13, 60, 109);
-            background: rgb(13, 60, 109);
-            padding: 7px;
-            box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-        }
-            input:hover,inputfocus
-            {
-                background: #ffffff;
-            }</style>
         {%csrf_token%}
         <br><p>아이디(학번)</p>
         <input type="text" name="id">
