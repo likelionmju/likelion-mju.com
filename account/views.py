@@ -16,14 +16,15 @@ def login(request):
     if request.method =='POST':
         if User.objects.filter(number=request.POST['id']).exists():
             user = User.objects.get(number=request.POST['id'])
-            if check_password(request.POST['pw'], user.password):
-                auth.login(request, user)
-                if user.is_active:
+            if user.is_active:
+                if check_password(request.POST['pw'], user.password):
+                    auth.login(request, user)
                     return redirect('apply')
                 else:
-                    return redirect('home')
+                    context.update({'error':'incorrect password'})
             else:
-                context.update({'error':'incorrect password'})
+                message = "이메일 인증이 완료되지 않았습니다."
+                return render(request, 'home.html', {'message':message})
         else:
             context.update({'error':'undefined user'})
     return render(request, 'login.html', context)
