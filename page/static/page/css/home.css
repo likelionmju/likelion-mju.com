@@ -11,6 +11,11 @@ footer img {
     height: 30px;
 }
 
+.content img {
+  max-width: 100%;
+  height:auto;
+}
+
 .content{
   align-items: center;
 }
@@ -164,7 +169,8 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 100%; /* Original value : 42em */
+  height:auto;
 }
 
 /*
