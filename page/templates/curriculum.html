@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+    MJU(Seoul) X Likelion
+    {% endblock %}
+
+    {% block link %}
+    {% static 'page\css\home.css' %}
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <!-- code here -->
+
+    <body class="text-center">
+        <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+            <main role="main" class="inner cover">
+                <h1 class="cover-heading">멋쟁이사자처럼 8기 커리큘럼 안내</h1>
+                <hr width="40%" color="black">
+                <p class="lead">
+                    <div class="content">
+                        <img src="{% static 'page/images/Main_Page.jpg'%}" alt="Main_Page.jpg">
+                    </div>
+                </p>
+                <p class="lead">
+                    <a href="
+                    {% if user.is_authenticated %}
+                        {% url 'apply' %}
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                        {% url 'login' %}
+                    {% endif %}
+                    "
+                    class="btn btn-lg btn-secondary">지원하기</a>
+                </p>
+            </main>
+            <footer>
+                <div class="inner">
+                    <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
+                    <div class="sns">
+                    <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
+                    <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
+                </div>
+            </footer>
+         </div>
+        </div>
+    <script src="{% static 'page/js/home.js' %}" type="text/javascript"></script>
+    </body>
+    {% endblock %}
+</body>
+</html>

@@ -37,3 +37,6 @@ def complete(request):
 
 def intro(request):
     return render(request, 'intro.html')
+
+def curriculum(request):
+    return render(request, 'curriculum.html')
