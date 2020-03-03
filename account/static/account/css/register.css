@@ -1,21 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Montserrat&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Gothic+A1&display=swap);
 
-body 
+
+body{
+    font-family:'Do Hyeon', sans-serif;
+}
 
 h1 {
     text-align: ceneter;
     color:rgb(13, 60, 109);
-    margin-left: 3em;
+    margin-left: 2em;
+    font-size:1.5em;
 }
 
 form {
     color: rgb(13, 60, 109);
 }
 
+select{
+    text-align: center;
+}
 input{
     border: thick dotted
     border-radius: 0px solid;
-    height: 60px;
+    height: 50px;
     width: 500px;
     font-size: 18pt;
     text-align: center;
@@ -31,3 +39,21 @@ input{
 input:hover,inputfocus{
         background: #ffffff;
 }
+
+textarea{
+    font-size: 0.5em;
+}
+
+.agree{
+    color:black;
+}
+div {
+    width: 500px;
+    height: 300px;
+    border: 2px solid rgb(13, 60, 109);
+    margin: auto;
+    color: black;
+    font-size: 0.57em;
+    text-align: justify;
+    font-family: 'Gothic A1', sans-serif;;
+ }
