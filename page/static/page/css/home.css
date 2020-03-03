@@ -11,6 +11,40 @@ main {
    margin: 0 auto -155px;
 }
 
+.btn-primary {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid rgb(13, 60, 109);
+  border-radius: 0.6em;
+  color:rgb(13, 60, 109) ;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  margin: auto;
+  padding: 0.7em 2.2em;
+  width: 9em;
+  height: 3em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.btn-primary:hover{
+    box-shadow: 0 0 40px 40px rgb(13, 60, 109) inset;
+    color: white;
+}
+.btn-primary:focus {
+    color: #fff;
+    outline: 0;
+    box-shadow: 0 0 40px 40px rgb(13, 60, 109) inset;
+}
+
 h1 {
     text-align: center;
 }
