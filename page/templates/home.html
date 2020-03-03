@@ -25,6 +25,11 @@
 <body>
 
   <main role="main">
+    {% if message %}
+      <div class="alert alert-light" role="alert">
+        {{ message }}
+      </div>
+    {% endif %}
     <div class="main-apply">
       <div class="apply-content">
         <div class="apply-letter">멋쟁이사자처럼 X 명지대(서울)</div>
@@ -100,18 +105,18 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
-    <footer>
-      <div class="inner">
-        <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
-        <div class="sns">
-          <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img
-              src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
-          <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img
-              src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
-        </div>
-    </footer>
-    <script src="{% static 'page/js/home.js' %}" type="text/javascript"></script>
+  </main>
+  <footer>
+    <div class="inner">
+      <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
+      <div class="sns">
+        <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img
+            src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
+        <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img
+            src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
+      </div>
+  </footer>
+  <script src="{% static 'page/js/home.js' %}" type="text/javascript"></script>
 </body>
 {% endblock %}
 
