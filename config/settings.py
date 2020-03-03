@@ -107,8 +107,8 @@ USE_TZ = True
 #Email
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'User@gmail.com'
-EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST_USER = 'bjh5230@likelion.org'
+EMAIL_HOST_PASSWORD = '49551380'
 EMAIL_USE_TLS = True
 
 # Static files (CSS, JavaScript, Images)

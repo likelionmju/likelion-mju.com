@@ -1,26 +1,36 @@
-from django.shortcuts import render,redirect,get_object_or_404
-from django.contrib.auth.models import User
-from django.contrib import auth
-from django.template.loader import render_to_string
-from django.core.mail import EmailMessage
+from django.shortcuts import render, redirect, get_object_or_404
+# auth module
 from .models import User
-import random
-from datetime import datetime
-from django.utils import timezone
+from django.contrib.auth.hashers import check_password
+from django.contrib import auth
+# email module
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
 def login(request):
+    context = {}
     if request.method =='POST':
-        id = request.POST['id']
-        pw = request.POST['pw']
-        user = auth.authenticate(request,username=id,password=pw)
-        if user is not None:
-            auth.login(request, user)
-            return redirect('home')
+        if User.objects.filter(number=request.POST['id']).exists():
+            user = User.objects.get(number=request.POST['id'])
+            if check_password(request.POST['pw'], user.password):
+                auth.login(request, user)
+                if user.is_active:
+                    return redirect('apply')
+                else:
+                    return redirect('home')
+            else:
+                context.update({'error':'incorrect password'})
         else:
-            return render(request,'login.html')
-    else:
-        return render(request,'login.html')
-    return render(request, 'login.html')
+            context.update({'error':'undefined user'})
+    return render(request, 'login.html', context)
+
+def logout(request):
+        auth.logout(request)
+        return redirect('login')
 
 def register(request):
     if request.method == 'POST':
@@ -34,39 +44,32 @@ def register(request):
                 college=request.POST['college'],
                 department = request.POST['department'],
                 grade = request.POST['grade'][0],
-                password = request.POST['pw'],
-                rand = randstr(10),
-                user_is_active = False,
+                password = request.POST['pw']
             )
-            message = user.name + "님께서 입력하신 메일로 인증링크를 발송했습니다."
-            return render(request,'notify.html',{'message':message})
+            current_site = get_current_site(request)
+            token = PasswordResetTokenGenerator().make_token(user)
+            sendmail(user.email, {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': token,
+            })
+            message = "입력하신 이메일로 인증링크를 발송하였습니다."
+            return render(request, 'home.html', {'message':message})
     return render(request, 'register.html')
 
-def logout(request):
-        auth.logout(request)
-        return redirect('login')
+def sendmail(address, link):
+    title = "멋쟁이사자처럼 at 명지대(서울) 계정 인증"
+    html_message = render_to_string('mail_template.html', link)
+    email = EmailMessage(title, html_message, to=[address])
+    email.content_subtype = "html"
+    email.send()
 
-def sendmail(request):
-        html_message = render_to_string('sendmail.html')
-        email = EmailMessage('title',html_message,to=['choiys0311@gmail.com'])
-        email.content_subtype = "html"
-        email.send()
-        message = "님께서 입력하신 메일로 인증링크를 발송했습니다."
-        return render(request,'notify.html',{'message':message})
-
-
-def checkmail(request):
-        User.user_is_active = True
-        User.rand=''
-        message = "이메일이 인증되었습니다."
-        return redirect('www.naver.com',{'message':message})
-
-#random
-def randstr(length):
-        rstr = "0123456789abcdefghijklnmopqrstuvwxyzABCDEFGHIJKLNMOPQRSTUVWXYZ"
-        rstr_len = len(rstr) - 1
-        result = ""
-        for i in range(length):
-            result += rstr[random.randint(0, rstr_len)]
-        return result
-
+def authenticate(request, uidb64, token):
+    pk = force_text(urlsafe_base64_decode(uidb64))
+    user = User.objects.get(pk=pk)
+    if PasswordResetTokenGenerator().check_token(user, token):
+        user.is_active = True
+        user.save()
+        auth.login(request, user)
+        return redirect('home')

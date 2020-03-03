@@ -50,7 +50,7 @@
                 </p>
                 <p class="lead">
                     <a href="
-                    {% if user.is_authenticated %}
+                    {% if user.is_authenticated and user.is_active %}
                         {% url 'apply' %}
                     {% endif %}
                     {% if not user.is_authenticated %}
