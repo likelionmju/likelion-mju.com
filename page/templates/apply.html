@@ -35,7 +35,7 @@
     
         <div class="applicant_form">
             <form method="post" action="{% url 'apply' %}">
-                
+                {% csrf_token %}
                 <input
                     type="hidden"
                     name="apply">
