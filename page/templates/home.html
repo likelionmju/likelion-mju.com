@@ -14,62 +14,38 @@
 </head>
     {% block content %}
     <!-- code here -->
-
-    <figure class="snip1585">
-        <img src="{% static 'page/images/likelionmju_logo.png'%}" alt="apply" />
-        <figcaption>
-          <h3>지원하기</h3>
-        </figcaption>
-        <a href="
-            {% if user.is_authenticated %}
-                {% url 'apply' %}
-            {% endif %}
-            {% if not user.is_authenticated %}
-                {% url 'login' %}
-            {% endif %}
-            "
-            ></a>
-      </figure>
-      <figure class="snip1585 hover">
-        <img src="{% static 'page/images/curriculum.jpg'%}" alt="curriculum" />
-        <figcaption>
-          <h3>커리큘럼</h3>
-        </figcaption>
-        <a href="{% url 'curriculum' %}"></a>
-      </figure>
-
-    <body class="text-center">
-        <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-            <main role="main" class="inner cover">
-                <h1 class="cover-heading">멋쟁이사자처럼 8기 <br>@ MJU Seoul</h1>
-                <hr width="40%" color="black">
-                <p class="lead">
-                    <div class="content">
-                        <img src="{% static 'page/images/Main_Page.jpg'%}" alt="Main_Page.jpg">
-                    </div>
-                </p>
-                <p class="lead">
-                    <a href="
-                    {% if user.is_authenticated %}
-                        {% url 'apply' %}
-                    {% endif %}
-                    {% if not user.is_authenticated %}
-                        {% url 'login' %}
-                    {% endif %}
-                    "
-                    class="btn btn-lg btn-secondary">지원하기</a>
-                </p>
-            </main>
-            <footer>
-                <div class="inner">
-                    <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
-                    <div class="sns">
-                    <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
-                    <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
-                </div>
-            </footer>
-         </div>
-        </div>
+    <body>
+        <figure class="snip1585">
+            <img src="{% static 'page/images/likelionmju_logo.png'%}" alt="apply" />
+            <figcaption>
+            <h3>지원하기</h3>
+            </figcaption>
+            <a href="
+                {% if user.is_authenticated %}
+                    {% url 'apply' %}
+                {% endif %}
+                {% if not user.is_authenticated %}
+                    {% url 'login' %}
+                {% endif %}
+                "
+                ></a>
+        </figure>
+        
+        <figure class="snip1585 hover">
+            <img src="{% static 'page/images/curriculum.jpg'%}" alt="curriculum" />
+            <figcaption>
+            <h3>커리큘럼</h3>
+            </figcaption>
+            <a href="{% url 'curriculum' %}"></a>
+        </figure>
+        <footer>
+            <div class="inner">
+                <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
+                <div class="sns">
+                <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
+                <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
+            </div>
+        </footer>
     <script src="{% static 'page/js/home.js' %}" type="text/javascript"></script>
     </body>
     {% endblock %}
