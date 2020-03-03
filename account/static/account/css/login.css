@@ -5,11 +5,12 @@ h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     color:white;
+    font-size: 3.7em;
 }
 
 .login-page {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 4% 0 0 0;
     margin: auto;
   }
 
