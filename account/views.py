@@ -74,3 +74,5 @@ def authenticate(request, uidb64, token):
         user.save()
         auth.login(request, user)
         return redirect('home')
+    message = "잘못된 접근입니다."
+    return render(request, 'home.html', {'message':message})
