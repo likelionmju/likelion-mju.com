@@ -140,7 +140,7 @@ form{
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
 
   .wrapper {
     display: grid;
@@ -237,7 +237,7 @@ form{
 
 }
 
-@media only screen and (max-width: 1040px) and (min-width: 768px) {
+@media only screen and (max-width: 1040px) and (min-width: 769px) {
 
     img{
       margin-top: 12%;
