@@ -16,20 +16,34 @@
     <br>
     <h1>회원가입</h1> 
     <form action="{%url 'register'%}" method="POST" style="text-align: center;">
+       <style> input{
+            border: 20px;
+            border-radius: 0px solid;
+            height: 60px;
+            width: 500px;
+            font-size: 12pt;
+            text-align: center;
+            color: rgb(13, 60, 109);
+            background: rgb(13, 60, 109);
+            padding: 7px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+            input:hover,inputfocus
+            {
+                background: #ffffff;
+            }</style>
         {%csrf_token%}
-        <div class="textbox">
-            <label for="ex_input">아이디</label>
-            <input type="text" id="ex_input">
-        </div>
         <br><p>아이디(학번)</p>
         <input type="text" name="id">
-        <p>비밀번호</p>
+        <br><br><p>비밀번호</p>
         <input type="password" name="pw">
-        <p>비밀번호 확인</p>
+        <br><br><p>비밀번호 확인</p>
         <input type="password" name="pw2">
-        <p>이름</p>
+        <br><br><p>이름</p>
         <input type="text" name="name">
-        <p>성별</p>
+        <br><br><p>성별</p>
         <select name="gender">
             <option>남성</option>
             <option>여성</option>
@@ -48,9 +62,9 @@
             <option>미래융합대학</option>
             <option>기타('학과'란에 소속 대학과 학과를 적어 주세요)</option>
         </select>
-        <p>학과</p>
+        <br><br><p>학과</p>
         <input type="text" name="department">
-        <p>학년</p>
+        <br><br><p>학년</p>
         <select name="grade">
             <option>1학년</option>
             <option>2학년</option>
@@ -58,8 +72,8 @@
             <option>4학년</option>
         </select>
         <br><br>
-        <input type="submit" value="회원가입">
-    </form> 
+        <input type="submit" value="회원가입" style="color: white;">
+    </form>
     {% endblock %}
 </body>
 </html>
