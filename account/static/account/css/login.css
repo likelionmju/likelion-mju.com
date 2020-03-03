@@ -54,6 +54,12 @@ h1 {
     font-family:"Montserrat", sans-serif;
   }
 
+  .errormessage{
+    color: #c42d2d; 
+    font-weight: bold; 
+    font-family: Montserrat, sans-serif;
+  }
+
   @media screen and (max-width: 768px) {
     h1 {
       text-align: center;
@@ -114,4 +120,5 @@ h1 {
     p{
       font-size: 0.7em;
     }
+    
   }

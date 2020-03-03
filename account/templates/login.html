@@ -22,13 +22,23 @@
         <div class="login-page">
             <div class="form">
                 <form class="login-form">
+                    {% if  error == 'undefined user' %}
+                    <style>
+                        input[type=text]{border:2px #c42d2d solid}
+                    </style>
+                    {% endif%}
+                    {% if error == 'incorrect password' %}
+                    <style>
+                        input[type=password]{border:2px #c42d2d solid}
+                    </style>
+                    {% endif %}
                     <input type="text" name="id" autocomplete="off" placeholder="ID">
                     <input type="password" name="pw" autocomplete="off" placeholder="PASSWORD">
                     <input type="submit" value="LOGIN" style="background-color: rgb(44, 91, 141); color:white">
                     <p class="message" style="color: #b3b3b3;">
                         Not registered? <a href="{% url 'register' %}" style="color: rgb(44, 91, 141);">Create an account</a>
                     </p>
-                    <p class="message" style="color: #c42d2d; font-weight: bold; font-family: Montserrat, sans-serif;">
+                    <p class="errormessage">
                         {{error}}
                     </p>
                 </form>
