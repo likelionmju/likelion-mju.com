@@ -1,3 +1,25 @@
 .form-horizontal{
     margin-top: 1.5rem;
 }
+
+@media(max-width:768px){
+    button{
+        margin-left: 28%;
+    }
+}
+
+@media(min-width:769px) and (max-width:991px){
+    button{
+        margin-left: 42%;
+    }
+}
+
+@media(min-width:992px){
+    form{
+        margin-left: 8em;
+    }
+
+    button{
+        margin-left: 25em;
+    }
+}
