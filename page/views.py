@@ -7,7 +7,11 @@ def home(request):
 
 def apply(request):
     if request.method == 'POST':
-        application = Application.objects.get(user=request.user)
+        application = Application.objects.filter(user=request.user)
+        if not application:
+            application = Application()
+        else:
+            application = Application.objects.get(user=request.user)
         application.user = request.user
         application.field = request.POST['field']
         application.answers = {
