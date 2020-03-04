@@ -26,10 +26,12 @@ def apply(request):
 
         if request.POST['btn'] == 'save':
             application.is_submit = False
+            application.save()
+            return render(request, 'home.html', {"message": "지원서가 임시저장되었습니다. 꼭 지원기간 내에 제출해주세요!"})
         else:
             application.is_submit = True
-        application.save()
-        return render(request, 'complete.html')
+            application.save()
+            return render(request, 'complete.html')
     else:
         try:
             application = request.user.application
