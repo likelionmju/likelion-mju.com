@@ -34,14 +34,14 @@
       <div class="apply-content">
         <div class="apply-letter">멋쟁이사자처럼 X 명지대(서울)</div>
         <div class="apply-button">
-          <a class="btn btn-lg btn-primary" href="
-                        {% if user.is_authenticated %}
-                            {% url 'apply' %}
-                        {% endif %}
-                        {% if not user.is_authenticated %}
-                            {% url 'login' %}
-                        {% endif %}
-                        " role="button">지원하기</a>
+              <a class="btn btn-primary" href="
+                {% if user.is_authenticated %}
+                  {% url 'apply' %}
+                {% endif %}
+                {% if not user.is_authenticated %}
+                  {% url 'login' %}
+                {% endif %}
+                " role="button">지원하기</a>
         </div>
       </div>
     </div>

@@ -26,6 +26,31 @@ h1 {
   text-shadow: 2px 4px 2px rgb(111, 128, 146);
 }
 
+/* apply button start */
+.btn-primary{
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  position: relative;
+	padding: 10px 40px;
+  margin: 0 550px;
+  float: left;
+	border-radius: 10px;
+	font-family: 'Do Hyeon', sans-serif;
+	font-size: 1.5em;
+	color: #FFF;
+  text-decoration: none;	
+  background-color: rgb(13, 60, 109);
+	border-bottom: 5px solid rgb(9, 46, 87);
+	text-shadow: 0px -2px rgb(11, 42, 77);
+}
+
+.btn-primary:active{
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
+/* apply button end */
 
 footer{
   background-color: rgb(245, 245, 245);
