@@ -34,51 +34,51 @@
        
     
         <div class="applicant_form">
-            <form method="post" action="{% url 'apply' %}">
+            <form action="{% url 'apply' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input
                     type="hidden"
                     name="apply">
                 
                 <div class="input-box">
-                    <label for="id_answer1">1. 지원 분야를 선택해 주세요. (하나의 분야에만 지원 가능)</label>
+                    <label for="field">1. 지원 분야를 선택해 주세요. (하나의 분야에만 지원 가능)</label>
                     <div class="radio">
-                    <input type="radio" name="id_answer1" required="required">개발자
-                    <input type="radio" name="id_answer1" required="required">디자이너</div>
+                    <input type="radio" id="field" name="field" required="required" value="개발자">개발자
+                    <input type="radio" id="field" name="field" required="required" value="디자이너">디자이너</div>
                 </div>
 
                 <div class="input-box">
-                    <label for="id_answer2">2. 자기 소개와 함께 멋쟁이사자처럼에 지원하게 된 동기를 적어 주세요. (500자 이내)</label>
-                    <textarea name="answer2" id="id_answer2" required="required">{{ answer2 }}</textarea>
+                    <label for="answer1">2. 자기 소개와 함께 멋쟁이사자처럼에 지원하게 된 동기를 적어 주세요. (500자 이내)</label>
+                    <textarea id="answer1" name="answer1" required="required">{{ answer1 }}</textarea>
                 </div>
     
                 <div class="input-box">
-                    <label for="id_answer3">3. 기억에 남는 프로그래밍 경험과 느낀 점에 대해 적어 주세요. 만약 프로그래밍 경험이 없다면, 어떤 언어를 배우고 싶은지 적어 주세요. (500자 이내)</label>
-                    <textarea name="answer3" id="id_answer3" required="required">{{ answer3 }}</textarea>
+                    <label for="answer2">3. 기억에 남는 프로그래밍 경험과 느낀 점에 대해 적어 주세요. 만약 프로그래밍 경험이 없다면, 어떤 언어를 배우고 싶은지 적어 주세요. (500자 이내)</label>
+                    <textarea id="answer2" name="answer2" required="required">{{ answer2 }}</textarea>
                 </div>
     
                 <div class="input-box">
-                    <label for="id_answer4">4. 멋쟁이사자처럼에서 이루고 싶은 목표 및 만들고 싶은 서비스에 대해 설명해 주세요. (500자 이내)</label>
-                    <textarea name="answer4" id="id_answer4" required="required">{{ answer4 }}</textarea>
+                    <label for="answer3">4. 멋쟁이사자처럼에서 이루고 싶은 목표 및 만들고 싶은 서비스에 대해 설명해 주세요. (500자 이내)</label>
+                    <textarea id="answer3" name="answer3" required="required">{{ answer3 }}</textarea>
                 </div>
     
                 <div class="input-box">
-                    <label for="id_answer5">5. 참여했던 팀 활동 중 가장 기억에 남는 경험과 느낀 점을 적어 주세요. (500자 이내)</label>
-                    <textarea name="answer5" id="id_answer5" required="required">{{ answer5 }}</textarea>
+                    <label for="answer4">5. 참여했던 팀 활동 중 가장 기억에 남는 경험과 느낀 점을 적어 주세요. (500자 이내)</label>
+                    <textarea id="answer4" name="answer4" required="required">{{ answer4 }}</textarea>
                 </div>
 
                 <div class="input-box">
-                    <label for="id_answer6">6. 지원자의 포트폴리오(디자이너-필수 / 개발자-선택), 2020-1학기 강의시간표, 개인 일정을 하나의 폴더에 넣어 zip 파일로 제출해주시기 바랍니다.
+                    <label for="portfolio">6. 지원자의 포트폴리오(디자이너-필수 / 개발자-선택), 2020-1학기 강의시간표, 개인 일정을 하나의 폴더에 넣어 zip 파일로 제출해주시기 바랍니다.
                         폴더명은 '학번_이름'입니다.</label>
-                    <input class="file" type="file" name="file" id="id_file" onchange="checkSize(this)">
+                    <input class="file" type="file" id="portfolio" name="portfolio" onchange="checkSize(this)">
                 </div>
                 
                 <div class="input-box">
-                    <label for="id_answer7">7. 면접이 가능하신 날짜를 체크해 주세요. (면접 일정 조율에 활용됩니다)</label>
+                    <label for="date">7. 면접이 가능하신 날짜를 체크해 주세요. (면접 일정 조율에 활용됩니다)</label>
                     <div class="radio">
-                    <input type="radio" name="id_answer7" required="required">3/23(월)
-                    <input type="radio" name="id_answer7" required="required">3/24(화)
-                    <input type="radio" name="id_answer7" required="required">모두 가능
+                    <input type="radio" id="date" name="date" required="required" value="3/23(월)">3/23(월)
+                    <input type="radio" id="date" name="date" required="required" value="3/24(화)">3/24(화)
+                    <input type="radio" id="date" name="date" required="required" value="모두 가능">모두 가능
                 </div>
                 </div>
 
