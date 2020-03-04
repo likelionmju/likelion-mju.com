@@ -4,8 +4,16 @@
     margin: 0;
     padding: 0;
   }
+
+  .text{
+    color: #fff;
+    position: absolute;
+    top: 75%;
+  }
+
   body{
     background-color: rgb(13, 60, 109);
+    font-family: 'PT Serif';
     height: 100vh;
     display: flex;
     align-items: center;
@@ -69,7 +77,6 @@
 @media screen and (max-width: 768px) {
   html {
      font-family: 'PT Serif';
-     font-weight: bold;
     }
   .loading span{
     font-size: 1.3em;
