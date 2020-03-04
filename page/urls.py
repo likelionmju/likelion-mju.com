@@ -6,7 +6,7 @@ urlpatterns = [
     path('home', views.home, name='home'),
     path('apply/', views.apply, name='apply'),
     path('apply/complete/', views.complete, name='complete'),
-    path('apply/list/', views.list),
-    path('apply/list/<str:opt>', views.list_opt, name='list'),
+    path('apply/list/', views.list, name='list'),
+    path('apply/list/<str:opt>', views.list_opt, name='list_opt'),
     path('apply/detail/<int:id>/', views.detail, name='detail'),
 ]
