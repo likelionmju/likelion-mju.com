@@ -2,81 +2,169 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% block title %}
-        LIKELION X MJU(SEOUL)
+    LIKELION X MJU(SEOUL)
     {% endblock %}
 
     {% block link %}
-        {% static 'account\css\register.css' %}
+    {% static 'account\css\register.css' %}
     {% endblock %}
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- 모든 합쳐진 플러그인을 포함하거나 (아래) 필요한 각각의 파일들을 포함하세요 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     {% block content %}
-    <br>
-    <br><br><h1> 멋쟁이사자처럼 X 명지대(서울) <br><span style="font-size: 3.63em;">회원가입</span></h1> 
-<form action="{%url 'register'%}" method="POST" style="text-align: center; font-size: 1.3em;">
+    <form class="form-horizontal" role="form" method="post">
         {%csrf_token%}
-        <br><br><p>아이디(학번)</p>
-        <input type="text" name="id">
-        <br><br><p>비밀번호</p>
-        <input type="password" name="pw">
-        <br><br><p>비밀번호 확인</p>
-        <input type="password" name="pw2">
-        <br><br><p>이름</p>
-        <input type="text" name="name">
+        <div class="form-group" id="divId">
+            <label for="inputId" class="col-lg-2 control-label">아이디(학번)</label>
+            <div class="col-lg-10">
+                <input type="text" name="id" class="form-control onlyNumber" id="id" data-rule-required="true"
+                    placeholder="숫자만 입력 가능합니다" maxlength="8" required>
+            </div>
+        </div>
+        <div class="form-group" id="divPassword">
+            <label for="inputPassword" class="col-lg-2 control-label">패스워드</label>
+            <div class="col-lg-10">
+                <input type="password" name="pw" class="form-control" id="password" name="excludeHangul" data-rule-required="true"
+                    placeholder="영문자와 숫자만 입력 가능합니다" maxlength="30" required>
+            </div>
+        </div>
+        <div class="form-group" id="divPasswordCheck">
+            <label for="inputPasswordCheck" class="col-lg-2 control-label">패스워드 확인</label>
+            <div class="col-lg-10">
+                <input type="password" name="pw2" class="form-control" id="passwordCheck" data-rule-required="true"
+                    placeholder="패스워드를 다시 입력해 주세요" maxlength="30" required>
+            </div>
+        </div>
+        <br><hr><br>
+        <div class="form-group" id="divName">
+            <label for="inputName" class="col-lg-2 control-label">이름</label>
+            <div class="col-lg-10">
+                <input type="text" name="name" class="form-control onlyHangul" id="name" data-rule-required="true"
+                    placeholder="한글만 입력 가능합니다." maxlength="15" required>
+            </div>
+        </div>
+        <div class="form-group" id="divEmail">
+            <label for="inputEmail" class="col-lg-2 control-label">이메일</label>
+            <div class="col-lg-10">
+                <input type="email" name="email" class="form-control" id="email" data-rule-required="true" placeholder="이미 인증된 이메일은 입력 불가"
+                    maxlength="40" required>
+            </div>
+        </div>
+        <div class="form-group" id="divPhoneNumber">
+            <label for="inputPhoneNumber" class="col-lg-2 control-label">휴대폰 번호</label>
+            <div class="col-lg-10">
+                <input type="tel" name="phone_number" class="form-control onlyNumber" id="phoneNumber" data-rule-required="true"
+                    placeholder="-를 제외하고 숫자만 입력하세요." maxlength="11" required>
+            </div>
+        </div>
+        <div class="form-group" id="divGender">
+            <label for="inputGender" class="col-lg-2 control-label">성별</label>
+            <div class="col-lg-10">
+                <select class="form-control" name="gender" id="gender">
+                    <option value="남">남</option>
+                    <option value="여">여</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group" id="divCollege">
+            <label for="inputCollege" class="col-lg-2 control-label">소속 단과대학</label>
+            <div class="col-lg-10">
+                <select class="form-control" name="college" id="college">
+                    <option value="인문대학">인문대학</option>
+                    <option value="사회과학대학">사회과학대학</option>
+                    <option value="법과대학">법과대학</option>
+                    <option value="경영대학">경영대학</option>
+                    <option value="ICT융합대학">ICT융합대학</option>
+                    <option value="미래융합대학">미래융합대학</option>
+                    <option value="기타">기타('학과'란에 소속 대학과 학부(과)를 적어 주세요)</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group" id="divDepartment">
+            <label for="inputDepartment" class="col-lg control-label">소속 학부(과) [복수전공 또는 연계전공 이수 시 함께 적어 주세요 (예시 : 경영학과/RPA)</label>
+            <div class="col-lg-10">
+                <input type="text" name="department" class="form-control" id="name" data-rule-required="true"
+                    placeholder="소속 학부(과)" maxlength="40" required>
+            </div>
+        </div>
+        <div class="form-group" id="divGrade">
+            <label for="inputGrade" class="col-lg-2 control-label">학년</label>
+            <div class="col-lg-10">
+                <select class="form-control" name="grade" id="grade">
+                    <option value="1학년">1학년</option>
+                    <option value="2학년">2학년</option>
+                    <option value="3학년">3학년</option>
+                    <option value="4학년">4학년</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="memberInfo" class="col-lg-2 control-label">개인정보 취급 방침</label>
+            <div class="col-lg-10" id="memberInfo">
+                <textarea class="form-control" rows="8" style="resize:none">개인정보 수집·이용 동의서
+멋쟁이사자처럼 at 명지대(서울)에서는 [8기 부원 모집]과 관련해 귀하의 개인정보를 수집(이용)하거나 제3자에게 제공하고자 하는 경우, 아래와 같이 [개인정보보호법]에 의거 개인정보의 수집·이용 및 제3자 제공에 관해 귀하의 동의를 받아야 합니다.
+1. 목적 : 멋쟁이사자처럼 at 명지대(서울) 8기 부원 모집을 위한 mjuseoul.likelion.org 사이트 회원가입 및 선발 과정에 활용
+2. 수집항목 : (필수 항목)
+1) 신청인 정보 : 이름, 학번, 연락처, 이메일, 소속 단과대학, 소속 학부(과), 성별
+2) 서비스 로그 : mjuseoul.likelion.org를 이용할 경우 접속 IP, 방문일시 등의 정보는 시스템에 의해 자동적으로 수집·저장됩니다. (선택 항목) 없음
+3. 보유 이용 기간 : 위 개인정보는 수집·이용에 관한 동의일로부터 보유목적 달성 시 또는 정보주체가 개인정보 삭제를 요청할 경우 지체없이 파기합니다. 단, 8기 부원 선발 종료 후에는 향후 멋쟁이사자처럼 본부에 부원으로 등록·관리만을 위하여 보유·이용되며 보존기간은 개인정보 동의 시점으로부터 1년입니다.
+4. 동의를 거부할 권리 및 동의를 거부할 경우의 이익 : 위 개인정보 중 필수항목의 수집·이용에 관한 동의는 본 단체의 부원 선발 과정을 위해 필수적이므로 이에 동의하셔야 이후 절차를 진행할 수 있습니다. 단, 동의하지 않으시는 경우에는 본 단체에 선발 지원이 불가합니다.
+                </textarea>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="agreement" id="memberInfoYn" value="Y" required>
+                        (필수) 개인 정보 수집 및 이용에 동의합니다.
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-primary">인증 이메일 발송</button>
+            </div>
+        </div>
+    </form>
 
-        <br><br><p>성별</p>
-        <select name="gender" >
-            <option>남성</option>
-            <option>여성</option>
-        </select>
-        <br><br><p>이메일</p>
-        <input type="email" name="email">
-        <br><br><p>휴대폰번호</p>
-        <input type="text" name="phone_number">
-        <p>단과대학</p>
-        <select name="college" style="height:30px;">
-            <option>인문대학</option>
-            <option>사회과학대학</option>
-            <option>법과대학</option>
-            <option>경영대학</option>
-            <option>ICT융합대학</option>
-            <option>미래융합대학</option>
-            <option>기타('학과'란에 소속 대학과 학과를 적어 주세요)</option>
-        </select>
-        <br><br><p>학년</p>
-            <select name="grade" style="height:30px;">
-                <option>1학년</option>
-                <option>2학년</option>
-                <option>3학년</option>
-                <option>4학년</option>
-            </select>
-         <br><br><p>학과<span style="font-size: small;">(복수전공 또는 연계전공이 있을 경우 함께 적어주세요. (예시 : 경영학과/RPA))</span></p>
-        <input type="text" name="department">
-        <br><br><br>
-        <p>개인정보 수집·이용 동의서</p>
-       <div>
-        멋쟁이사자처럼 at 명지대(서울)에서는 [8기 부원 모집]과 관련해 귀하의 개인정보를 수집(이용)하거나 제3자에게 제공하고자 하는 경우, 아래와 같이 [개인정보보호법]에 의거 개인정보의 수집·이용 및 제3자 제공에 관해 귀하의 동의를 받아야 합니다.
-        <br>
-        1. 목적 : 멋쟁이사자처럼 at 명지대(서울) 8기 부원 모집을 위한 mjuseoul.likelion.org 사이트 회원가입 및 선발 과정에 활용
-        <br>
-        2. 수집항목 : (필수 항목) 
-        <br>
-        1) 신청인 정보 : 이름, 학번, 연락처, 이메일, 소속 단과대학, 소속 학부(과), 성별
-        <br>
-        2) 서비스 로그 : mjuseoul.likelion.org를 이용할 경우 접속 IP, 방문일시 등의 정보는 시스템에 의해 자동적으로 수집·저장됩니다.
-        (선택 항목) 없음
-        <br>
-        3. 보유 이용 기간 : 위 개인정보는 수집·이용에 관한 동의일로부터 보유목적 달성 시 또는 정보주체가 개인정보 삭제를 요청할 경우 지체없이 파기합니다.
-        단, 8기 부원 선발 종료 후에는 향후 멋쟁이사자처럼 본부에 부원으로 등록·관리만을 위하여 보유·이용되며 보존기간은 개인정보 동의 시점으로부터 1년입니다.
-       <br>
-        4. 동의를 거부할 권리 및 동의를 거부할 경우의 이익 : 위 개인정보 중 필수항목의 수집·이용에 관한 동의는 본 단체의 부원 선발 과정을 위해 필수적이므로 이에 동의하셔야 이후 절차를 진행할 수 있습니다. 단, 동의하지 않으시는 경우에는 본 단체에 선발 지원이 불가합니다.
-       </div>
-       <br>
-        <p class="agree"><label for="a">(필수) 개인 정보 수집 및 이용에 동의합니다.</label> <input id="a" type="checkbox" name="agreement" style="width:0.83em;height:0.83em;"></p>
-        <br><input type="submit" value="회원가입" style="color: rgb(13, 60, 109); ">
-        <br><br><br>
+
+    <script>
+        $(function () {
+            //모달을 전역변수로 선언
+            var modalContents = $(".modal-contents");
+            var modal = $("#defaultModal");
+
+            $('.onlyAlphabetAndNumber').keyup(function (event) {
+                if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
+                    var inputVal = $(this).val();
+                    $(this).val($(this).val().replace(/[^_a-z0-9]/gi, '')); //_(underscore), 영어, 숫자만 가능
+                }
+            });
+
+            $(".onlyHangul").keyup(function (event) {
+                if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[a-z0-9]/gi, ''));
+                }
+            });
+
+            $(".onlyNumber").keyup(function (event) {
+                if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi, ''));
+                }
+            });
+        });
+    </script>
     {% endblock %}
 </body>
 </html>
