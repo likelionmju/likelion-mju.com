@@ -187,7 +187,7 @@ form{
   form{
     background-color: whitesmoke;
     width: 90%;
-    height: 97rem;
+    height: 105rem;
     margin-left: 5.5%;
     margin-right: 3%;
     margin-bottom: 5%;
@@ -205,7 +205,7 @@ form{
 
   .btn {
     margin-left: 45%;
-    margin-top: 21%;
+    margin-top: 25%;
     grid-gap:7%;
     margin-bottom: 15%;
     padding: 4%;
@@ -248,6 +248,7 @@ form{
     .btn {
       margin-top: 7%;
       grid-gap: 5%;
+      margin-bottom: 3%;
     }
 
     .title_name{
@@ -271,7 +272,7 @@ form{
     form{
       
       margin-top: 6%;
-      height: 89rem;
+      height: 96rem;
       
     }
 
@@ -293,6 +294,6 @@ form{
 
 @media only screen and (min-width: 1040px) {
   form{
-    height: 110rem;
+    height: 120rem;
   }
 }
