@@ -56,10 +56,10 @@ def register(request):
                 'token': token,
             })
             message = "입력하신 이메일로 인증링크를 발송하였습니다."
-            return render(request, 'register.html', {'message':message})
+            return render(request, 'home.html', {'message':message})
         else:
             message = "패스워드 확인에 실패했습니다. 다시 입력해 주시기 바랍니다."
-            return render(request, 'home.html', {'message':message})
+            return render(request, 'register.html', {'message':message})
     return render(request, 'register.html')
 
 def sendmail(address, link):
