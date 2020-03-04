@@ -28,13 +28,13 @@ def apply(request):
         return render(request, 'complete.html')
     else:
         try:
-            myapplication = request.user.application
-            if myapplication.is_submit == True:
+            application = request.user.application
+            if application.is_submit == True:
                 return render(request, 'home.html')
-            answer1 = myapplication.answers['answer1']
-            answer2 = myapplication.answers['answer2']
-            answer3 = myapplication.answers['answer3']
-            answer4 = myapplication.answers['answer4']
+            answer1 = application.answers['answer1']
+            answer2 = application.answers['answer2']
+            answer3 = application.answers['answer3']
+            answer4 = application.answers['answer4']
 
             return render(request, 'apply.html',
                           {'answer1': answer1, 'answer2': answer2, 'answer3': answer3, 'answer4': answer4})
