@@ -85,15 +85,23 @@
 
                 <div class="btn">
                     <button class="save" type="submit" name="btn" value="save" class="btn_line">임시저장</button>
-                    <button class="submit" type="submit" name="btn" value="submit" class="btn_line">지원서 제출하기</button>
+                    <button class="submit" type="button" name="btn" value="submit" class="btn_line" onclick="button_event();">지원서 제출하기</button>
                 </div>
             </form>
         </div>
     </main>
 
+    <script type="text/javascript">
+            function button_event(){
+                if (confirm("최종 제출 후에는 수정이 어렵습니다. 제출하시겠습니까?") == true){    //확인
+                    document.form.submit();
+                    window.location.href = "{% url 'complete' %}";
+                }
+                else{   //취소
+                    return;
+                }
+            }
+    </script>
     {% endblock %}
 </body>
-<script>
-
-</script>
 </html>
