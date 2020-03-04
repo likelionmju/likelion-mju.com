@@ -34,7 +34,7 @@
        
     
         <div class="applicant_form">
-            <form action="{% url 'apply' %}" method="POST" enctype="multipart/form-data">
+            <form action="{% url 'apply' %}" id="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 
                 <div class="input-box">
@@ -94,8 +94,7 @@
     <script type="text/javascript">
             function button_event(){
                 if (confirm("최종 제출 후에는 수정이 어렵습니다. 제출하시겠습니까?") == true){    //확인
-                    document.form.submit();
-                    window.location.href = "{% url 'complete' %}";
+                    document.getElementById('form').submit("submit");
                 }
                 else{   //취소
                     return;
