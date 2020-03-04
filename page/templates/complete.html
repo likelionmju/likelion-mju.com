@@ -12,6 +12,11 @@
     {% block link %}
         {% static 'page\css\complete.css' %}
     {% endblock %}
+
+    <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+    <link href="album.css" rel="stylesheet">
 </head>
 <body>
     {% block content %}
@@ -19,6 +24,17 @@
     <h2 contenteditable="true" class="title">🦁THANK YOU🦁</h2>
     <br>
     <h3>Your application has been successfully submitted.</h3>
+    <br>
+    <p>
+        <a href="
+        {% if user.is_authenticated %}
+          {% url 'apply' %}
+        {% endif %}
+        {% if not user.is_authenticated %}
+          {% url 'login' %}
+        {% endif %}
+        " class="btn btn-light my-2" role="button">메인으로 돌아가기</a>
+      </p>
     {% endblock %}
 </body>
 </html> 
