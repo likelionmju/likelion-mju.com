@@ -16,125 +16,76 @@
   <!-- Bootstrap core CSS -->
   <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+  <link href="album.css" rel="stylesheet">
+
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:800&display=swap" rel="stylesheet">
 
 </head>
 {% block content %}
 <!-- code here -->
 
-<body>
-
-  <main role="main">
-    {% if message %}
-      <div class="alert alert-light" role="alert">
-        {{ message }}
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">
+          {% if message %}
+          <div class="alert alert-light" role="alert"> 
+            Error Message : {{ message }}
+          </div>
+          {% endif %}
+        </h3>
       </div>
-    {% endif %}
-    <div class="main-apply">
-      <div class="apply-content" style="text-align: center;">
-        <div class="apply-letter">멋쟁이사자처럼 X 명지대(서울)</div>
-        <div class="apply-button">
-          <a class="btn btn-primary" href="
+    </header>
+
+    <main role="main">
+      <section class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1 style="font-family:'Nanum Gothic';">멋쟁이사자처럼 X 명지대(서울)</h1><br>
+          <p class="lead">8기 부원 선발 시작<br>모집 기간 : 03.04(수) ~ 03.19(목)</p>
+          <p>
+            <a href="
             {% if user.is_authenticated %}
               {% url 'apply' %}
             {% endif %}
             {% if not user.is_authenticated %}
               {% url 'login' %}
             {% endif %}
-            " role="button">지원하기</a>
+            " class="btn btn-light my-2" role="button">지원하기</a>
+          </p>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="container">
-            <div class="carousel-caption">
-              <img src="{% static 'page/images/Start.png' %}" class="d-block w-100" alt="Start.png">
+      <div class="album">
+        <div class="container">
+          <div class="row">
+            <img class="bd-placeholder-img card-img-top" src="{% static 'page/images/Main_Page_Final.png' %}"
+              width="100%" height="auto" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <small style="font-size:0.5em">멋쟁이사자처럼 X 명지대(서울)의 모든 콘텐츠는 저작권법의 보호를 받은 바, 무단 전재와 복사, 배포 등을 금합니다.</small>
+              </div>
             </div>
           </div>
         </div>
+    </main>
 
-        <div class="carousel-item">
-          <div class="container">
-            <div class="carousel-caption">
-              <img src="{% static 'page/images/Schedule_2.PNG' %}" class="d-block w-100" alt="Schedule_2.PNG">
-            </div>
-          </div>
+    <div class="push"></div>
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Copyright <strong>Likelion 8th @ MJU Seoul</strong>. All rights reserved.</p>
+        <div class="sns">
+          <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img
+              src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
+          <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img
+              src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
+          <a href="https://www.github.com/likelionMJU" target="_blank"><img src="{% static 'page/images/github.svg' %}"
+              alt="github"></a>
         </div>
-
-        <div class="carousel-item">
-          <div class="container">
-            <div class="carousel-caption">
-              <img src="{% static 'page/images/Curriculum.PNG' %}" class="d-block w-100" alt="Curriculum.PNG">
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="container">
-            <div class="carousel-caption">
-              <img src="{% static 'page/images/Apply_1.PNG' %}" class="d-block w-100" alt="Apply_1.PNG">
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="container">
-            <div class="carousel-caption" data-interval="400">
-              <img src="{% static 'page/images/Apply_2.PNG' %}" class="d-block w-100" alt="Apply_2.PNG">
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="container">
-            <div class="carousel-caption">
-              <img src="{% static 'page/images/FAQ.PNG' %}" class="d-block w-100" alt="FAQ.PNG">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </main>
-  <div class="push"></div>
-  <footer>
-    <div class="inner">
-      <p>Copyright all rights reserved by <strong>Likelion 8th @ MJU Seoul</strong></a>.</p>
-      <div class="sns">
-        <a href="https://www.instagram.com/likelion_mju/" target="_blank"><img
-            src="https://image.flaticon.com/icons/svg/174/174855.svg" alt="instagram"></a>
-        <a href="https://www.facebook.com/likelionMJU/" target="_blank"><img
-            src="https://image.flaticon.com/icons/svg/124/124010.svg" alt="facebook"></a>
-        <a href="https://www.github.com/likelionMJU" target="_blank"><img 
-            src="{% static 'page/images/github.svg' %}" alt=""></a>
-      </div>
-     
-  </footer>
-  <script src="{% static 'page/js/home.js' %}" type="text/javascript"></script>
-  <script>
-    $('.carousel').carousel({
-      interval: 2020
-    });
-  </script>
+    </footer>
+  </div>
 </body>
 {% endblock %}
 

@@ -1,283 +1,167 @@
-@import url(https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap);
-
-*{
-  margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap&subset=korean');
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-footer, .push {
-  height: 80px;
+.jumbotron{
+  background-image: url("/static/page/images/Background.jpg");
+  background-size: cover;
+  padding-top:15%;
+  padding-bottom:10%;
 }
 
-main {
-   min-height: 100%;
-   margin: 0 auto -155px;
+.container h1{
+  font-family: 'Noto Sans KR';
+  font-size:4em;
+  color:white;
 }
 
-
-h1 {
-    text-align: center;
+.container p{
+  font-family: 'Noto Sans KR';
+  font-size: 2em;
+  color:white;
 }
 
-.apply-letter{
-  text-align: center;
-  font-family: 'Do Hyeon', sans-serif;
-  font-size: 3em;
-  color: rgb(13, 60, 109) ;
-  text-shadow: 2px 4px 2px rgb(111, 128, 146);
+.btn{
+  font-size:1.25em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
-@media screen and (max-width: 768px){
-  .apply-letter{
-    text-align: center;
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 1.5em;
-    color: rgb(13, 60, 109) ;
-    text-shadow: 2px 4px 2px rgb(111, 128, 146);
-  }
-}
-/* apply button start */
-.btn-primary {
-  box-sizing: border-box;
-  appearance: none;
-  background-color: transparent;
-  border: 2px solid rgb(13, 60, 109);
-  border-radius: 0.6em;
-  color: rgb(13, 60, 109);
-  cursor: pointer;
-  display: flex;
-  align-self: center;
-  font-size: 1.3em;
-  margin: auto auto;
-  padding: auto;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Do Hyeon', sans-serif;
-  font-weight: 600;
-  height: 3em;
-  width: 7em;
-  position:relative;
-  line-height:2;
-}
-.btn-primary:hover,
-.btn-primary:focus {
-    color: #fff;
-    outline: 0;
-    background-color: rgb(13, 60, 109);
-    border: 2px solid rgb(13, 60, 109);
-    text-shadow:2px 4px 2px rgb(60, 77, 95);
-  }
-
-  @media screen and (max-width: 768px){
-    .btn-primary {
-      box-sizing: border-box;
-      appearance: none;
-      background-color: transparent;
-      border: 2px solid rgb(13, 60, 109);
-      border-radius: 0.6em;
-      color: rgb(13, 60, 109);
-      cursor: pointer;
-      display: flex;
-      align-self: center;
-      font-size: 0.7em;
-      line-height: 1;
-      margin: 0 auto;
-      padding: 0 auto;
-      text-decoration: none;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: 'Do Hyeon', sans-serif;
-      font-weight: 700;
-      height: 2em;
-      width: 6em;
-      position:relative;
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus {
-        color: #fff;
-        outline: 0;
-        background-color: rgb(13, 60, 109);
-        border: 2px solid rgb(13, 60, 109);
-      }
-  }
-/* apply button end */
 
 footer{
+  display: block;
   background-color: rgb(245, 245, 245);
   text-align: center;
   font-size: 1vw;
 }
 
 footer img {
-    width: 30px;
-    height: 30px;
-    margin-left:5px;
-    margin-right:5px;
+  width: 30px;
+  height: 30px;
+  margin-left:5px;
+  margin-right:5px;
 }
 
-
-/* BoootStrap */
-
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #fff; 
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: rgb(13, 60, 109);
-  border: .05rem solid #fff;
-}
-
-/*
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #8064A2 !important;
-}
-*/
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  font-family: "Montserrat";
-}
-
-.cover-container {
-  max-width: 100%; /* Original value : 42em */
-  height:auto;
-}
-
-/*
- * Cover
- */
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: 700;
-}
-
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-
-body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
-}
-
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-
-.carousel {
-  margin-bottom: 4rem;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 32rem;
-  transition: 0.5s ease-in-out;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
-}
-
-.carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
- }
- 
- .carousel-control-next-icon {
-   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
- }
-
- .carousel-indicators li {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin: 10px;
-  text-indent: 0;
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-  background-color: #a0a0a0;
-  box-shadow: inset 0.5px 0.5px 0.5px 0.5px rgba(0,0,0,0.5);    
-}
-.carousel-indicators .active {
-  width: 15px;
-  height: 15px;
-  margin: 10px;
-  background-color: #666666;
-}
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 40em) {
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
 
-  .featurette-heading {
-    font-size: 50px;
+  .btn{
+    font-size:1.25em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
-}
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
   footer{
     left:0px; 
     bottom:0px; 
     height:auto; 
     width:100%;
     font-size: 1em;
+    padding-top:2%;
+    padding-bottom: 5%;
   }
 
-  .carousel-indicators li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    text-indent: 0;
-    cursor: pointer;
-    border: none;
-    border-radius: 50%;
-    background-color: #a0a0a0;
-    box-shadow: inset 0.5px 0.5px 0.5px 0.5px rgba(0,0,0,0.5);    
+  footer img {
+    width: 30px;
+    height: 30px;
+    margin-left:5px;
+    margin-right:5px;
   }
-  .carousel-indicators .active {
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    background-color: #666666;
+}
+
+@media (min-width: 411px) and (max-width:767px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+
+  .container h1{
+    font-family: 'Noto Sans KR';
+    font-size:2.8em;
+    color:white;
+  }
+  
+  .container p{
+    font-family: 'Noto Sans KR';
+    font-size: 1em;
+    color:white;
+  }
+
+  .btn{
+    font-size:1.25em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  footer{
+    left:0px; 
+    bottom:0px; 
+    height:auto; 
+    width:100%;
+    font-size: 0.5em;
+    padding-top:2%;
+    padding-bottom: 5%;
+  }
+
+  footer img {
+    width: 20px;
+    height: 20px;
+    margin-left:5px;
+    margin-right:5px;
+  }
+}
+
+@media (min-width: 320px) and (max-width:410px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+
+  .container h1{
+    font-family: 'Noto Sans KR';
+    font-size:2.5em;
+    color:white;
+  }
+  
+  .container p{
+    font-family: 'Noto Sans KR';
+    font-size: 1em;
+    color:white;
+  }
+
+  .btn{
+    font-size:1.25em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  footer{
+    left:0px; 
+    bottom:0px; 
+    height:auto; 
+    width:100%;
+    font-size: 0.5em;
+    padding-top:2%;
+    padding-bottom: 5%;
+  }
+
+  footer img {
+    width: 20px;
+    height: 20px;
+    margin-left:5px;
+    margin-right:5px;
   }
 }
