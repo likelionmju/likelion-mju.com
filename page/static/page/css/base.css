@@ -1,0 +1,21 @@
+.navbar-brand{
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+}
+
+.nav-item{
+    font-family: Montserrat, sans-serif;
+}
+
+@media screen and (max-width: 769px){
+    .navbar-brand{
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        font-size:15px;
+    }
+    
+    .nav-item{
+        font-family: Montserrat, sans-serif;
+        font: size 9px;
+    }
+}
