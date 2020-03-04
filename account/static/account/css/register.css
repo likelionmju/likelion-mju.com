@@ -20,8 +20,9 @@ form {
 select{
     text-align: center;
 }
+
 input{
-    border: thick dotted
+    border: thick dotted;
     border-radius: 0px solid;
     height: 50px;
     width: 500px;
