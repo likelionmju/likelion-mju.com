@@ -58,6 +58,15 @@ def list(request):
         applications = Application.objects.all()
         return render(request, 'apply_list.html', {'applications':applications})
 
+def list_opt(request, opt):
+    if request.user.is_superuser:
+        applications = Application.objects.all()
+        if opt == "save":
+            applications = applications.filter(is_submit=False)
+        elif opt == "submit":
+            applications = applications.filter(is_submit=True)
+        return render(request, 'apply_list.html', {'applications':applications})
+
 def detail(request, id):
     if request.user.is_superuser:
         application = Application.objects.get(pk=id)

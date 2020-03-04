@@ -17,6 +17,17 @@
 </head>
 <body>
     {% block content %}
+        <br>
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            설정
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'list' 'save' %}">임시저장</a>
+            <a class="dropdown-item" href="{% url 'list' 'submit' %}">지원완료</a>
+            </div>
+        </div>
+        <br>
         <ul class="list-group">
             {% for application in applications %}
             <li class="list-group-item"><a href="{% url 'detail' application.id %}">{{ application.user }}</a></li>
