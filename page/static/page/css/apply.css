@@ -290,3 +290,9 @@ form{
       width: 200px;
     }
 }
+
+@media only screen and (min-width: 1040px) {
+  form{
+    height: 110rem;
+  }
+}
