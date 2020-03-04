@@ -40,8 +40,8 @@
                 <div class="input-box">
                     <label for="field">1. 지원 분야를 선택해 주세요. (하나의 분야에만 지원 가능)</label>
                     <div class="radio">
-                        <input type="radio" id="field" name="field" required="required" value="개발자">개발자
-                        <input type="radio" id="field" name="field" required="required" value="디자이너">디자이너
+                        <input type="radio" id="field" name="field" required="required" {% if field == "개발자" %} checked {% endif %} value="개발자">개발자
+                        <input type="radio" id="field" name="field" required="required" {% if field == "디자이너" %} checked {% endif %} value="디자이너">디자이너
                     </div>
                 </div>
 
@@ -74,9 +74,9 @@
                 <div class="input-box">
                     <label for="date">7. 면접이 가능하신 날짜를 체크해 주세요. (면접 일정 조율에 활용됩니다)</label>
                     <div class="radio">
-                    <input type="radio" id="date" name="date" required="required" value="3/23(월)">3/23(월)
-                    <input type="radio" id="date" name="date" required="required" value="3/24(화)">3/24(화)
-                    <input type="radio" id="date" name="date" required="required" value="모두 가능">모두 가능
+                    <input type="radio" id="date" name="date" required="required" {% if date == "3/23(월)" %} checked {% endif %} value="3/23(월)">3/23(월)
+                    <input type="radio" id="date" name="date" required="required" {% if date == "3/24(화)" %} checked {% endif %} value="3/24(화)">3/24(화)
+                    <input type="radio" id="date" name="date" required="required" {% if date == "모두 가능" %} checked {% endif %} value="모두 가능">모두 가능
                     </div>
                 </div>
 
@@ -90,4 +90,7 @@
 
     {% endblock %}
 </body>
+<script>
+
+</script>
 </html>

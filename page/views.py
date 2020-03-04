@@ -31,13 +31,15 @@ def apply(request):
             application = request.user.application
             if application.is_submit == True:
                 return render(request, 'home.html')
-            answer1 = application.answers['answer1']
-            answer2 = application.answers['answer2']
-            answer3 = application.answers['answer3']
-            answer4 = application.answers['answer4']
 
-            return render(request, 'apply.html',
-                          {'answer1': answer1, 'answer2': answer2, 'answer3': answer3, 'answer4': answer4})
+            return render(request, 'apply.html', {
+                'field': application.field,
+                'answer1': application.answers['answer1'],
+                'answer2': application.answers['answer2'],
+                'answer3': application.answers['answer3'],
+                'answer4': application.answers['answer4'],
+                'date': application.date
+            })
         except Application.DoesNotExist:
             return render(request, 'apply.html')
 
