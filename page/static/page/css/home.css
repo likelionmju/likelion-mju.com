@@ -21,7 +21,7 @@ h1 {
 .apply-letter{
   text-align: center;
   font-family: 'Do Hyeon', sans-serif;
-  font-size: 4em;
+  font-size: 3em;
   color: rgb(13, 60, 109) ;
   text-shadow: 2px 4px 2px rgb(111, 128, 146);
 }
@@ -45,18 +45,18 @@ h1 {
   cursor: pointer;
   display: flex;
   align-self: center;
-  font-size: 0.93em;
-  line-height: 1;
-  margin: 0 40em;
-  padding: 0 auto;
+  font-size: 1.3em;
+  margin: auto auto;
+  padding: auto;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Do Hyeon', sans-serif;
-  font-weight: 700;
-  height: 2.1em;
-  width: 5em;
+  font-weight: 600;
+  height: 3em;
+  width: 7em;
   position:relative;
+  line-height:2;
 }
 .btn-primary:hover,
 .btn-primary:focus {

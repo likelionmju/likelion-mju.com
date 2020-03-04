@@ -31,17 +31,17 @@
       </div>
     {% endif %}
     <div class="main-apply">
-      <div class="apply-content">
+      <div class="apply-content" style="text-align: center;">
         <div class="apply-letter">멋쟁이사자처럼 X 명지대(서울)</div>
         <div class="apply-button">
-              <a class="btn btn-primary" href="
-                {% if user.is_authenticated %}
-                  {% url 'apply' %}
-                {% endif %}
-                {% if not user.is_authenticated %}
-                  {% url 'login' %}
-                {% endif %}
-                " role="button">지원하기</a>
+          <a class="btn btn-primary" href="
+            {% if user.is_authenticated %}
+              {% url 'apply' %}
+            {% endif %}
+            {% if not user.is_authenticated %}
+              {% url 'login' %}
+            {% endif %}
+            " role="button">지원하기</a>
         </div>
       </div>
     </div>
@@ -127,6 +127,7 @@
         <a href="https://www.github.com/likelionMJU" target="_blank"><img 
             src="{% static 'page/images/github.svg' %}" alt=""></a>
       </div>
+     
   </footer>
   <script src="{% static 'page/js/home.js' %}" type="text/javascript"></script>
   <script>
