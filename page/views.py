@@ -53,5 +53,23 @@ def apply(request):
 def complete(request):
     return render(request, 'complete.html')
 
+def list(request):
+    if request.user.is_superuser:
+        applications = Application.objects.all()
+        return render(request, 'apply_list.html', {'applications':applications})
+
+def detail(request, id):
+    if request.user.is_superuser:
+        application = Application.objects.get(pk=id)
+        return render(request, 'apply.html', {
+            'field': application.field,
+                'answer1': application.answers['answer1'],
+                'answer2': application.answers['answer2'],
+                'answer3': application.answers['answer3'],
+                'answer4': application.answers['answer4'],
+                'portfolio': application.portfolio,
+                'date': application.date
+            })
+
 def intro(request):
     return render(request, 'intro.html')

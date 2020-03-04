@@ -70,7 +70,7 @@
                         폴더명은 '학번_이름'입니다.</label>
                     <div class="file">
                         <input  type="file" id="portfolio" name="portfolio" onchange="checkSize(this)">
-                        <div>{% if portfolio %}첨부된 파일: {{portfolio}} {% endif %}</div>
+                        <div>{% if portfolio %}제출된 파일: <a href="{{portfolio.url}}">{{portfolio}}</a> {% endif %}</div>
                     </div>
                 </div>
                 
