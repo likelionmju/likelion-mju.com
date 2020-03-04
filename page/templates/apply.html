@@ -68,7 +68,10 @@
                 <div class="input-box">
                     <label for="portfolio">6. 지원자의 포트폴리오(디자이너-필수 / 개발자-선택), 2020-1학기 강의시간표, 개인 일정을 하나의 폴더에 넣어 zip 파일로 제출해주시기 바랍니다.
                         폴더명은 '학번_이름'입니다.</label>
-                    <input class="file" type="file" id="portfolio" name="portfolio" onchange="checkSize(this)">
+                    <div class="file">
+                        <input  type="file" id="portfolio" name="portfolio" onchange="checkSize(this)">
+                        <div>첨부된 파일: {{portfolio}}</div>
+                    </div>
                 </div>
                 
                 <div class="input-box">

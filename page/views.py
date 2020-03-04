@@ -38,6 +38,7 @@ def apply(request):
                 'answer2': application.answers['answer2'],
                 'answer3': application.answers['answer3'],
                 'answer4': application.answers['answer4'],
+                'portfolio': application.portfolio,
                 'date': application.date
             })
         except Application.DoesNotExist:
