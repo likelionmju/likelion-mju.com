@@ -25,6 +25,7 @@
         <input type="password" name="pw2">
         <br><br><p>이름</p>
         <input type="text" name="name">
+
         <br><br><p>성별</p>
         <select name="gender" >
             <option>남성</option>
@@ -44,15 +45,15 @@
             <option>미래융합대학</option>
             <option>기타('학과'란에 소속 대학과 학과를 적어 주세요)</option>
         </select>
-        <br><br><p>학과</p>
-        <input type="text" name="department">
         <br><br><p>학년</p>
-        <select name="grade" style="height:30px;">
-            <option>1학년</option>
-            <option>2학년</option>
-            <option>3학년</option>
-            <option>4학년</option>
-        </select>
+            <select name="grade" style="height:30px;">
+                <option>1학년</option>
+                <option>2학년</option>
+                <option>3학년</option>
+                <option>4학년</option>
+            </select>
+         <br><br><p>학과</p>
+        <input type="text" name="department">
         <br><br><br>
         <p>개인정보 수집·이용 동의서</p>
        <div>
@@ -74,8 +75,7 @@
        </div>
        <br>
         <p class="agree"><label for="a">(필수) 개인 정보 수집 및 이용에 동의합니다.</label> <input id="a" type="checkbox" name="agreement" style="width:0.83em;height:0.83em;"></p>
-        <br><input type="submit" value="회원가입" style="color: rgb(13, 60, 109);">
-    </form>
+        <br><input type="submit" value="회원가입" style="color: rgb(13, 60, 109); ">
     {% endblock %}
 </body>
 </html>
