@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap&subset=korean');
+@font-face { font-family: 'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -16,13 +18,13 @@
 }
 
 .container h1{
-  font-family: 'Noto Sans KR';
+  font-family: 'GmarketSansMedium';
   font-size:4em;
   color:white;
 }
 
 .container p{
-  font-family: 'Noto Sans KR';
+  font-family: 'GmarketSansMedium';
   font-size: 2em;
   color:white;
 }
