@@ -25,31 +25,81 @@ h1 {
   color: rgb(13, 60, 109) ;
   text-shadow: 2px 4px 2px rgb(111, 128, 146);
 }
-
+@media screen and (max-width: 768px){
+  .apply-letter{
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.5em;
+    color: rgb(13, 60, 109) ;
+    text-shadow: 2px 4px 2px rgb(111, 128, 146);
+  }
+}
 /* apply button start */
-.btn-primary{
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s;
-  position: relative;
-	padding: 10px 40px;
-  margin: 0 550px;
-  float: left;
-	border-radius: 10px;
-	font-family: 'Do Hyeon', sans-serif;
-	font-size: 1.5em;
-	color: #FFF;
-  text-decoration: none;	
-  background-color: rgb(13, 60, 109);
-	border-bottom: 5px solid rgb(9, 46, 87);
-	text-shadow: 0px -2px rgb(11, 42, 77);
+.btn-primary {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid rgb(13, 60, 109);
+  border-radius: 0.6em;
+  color: rgb(13, 60, 109);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 0.93em;
+  line-height: 1;
+  margin: 0 40em;
+  padding: 0 auto;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Do Hyeon', sans-serif;
+  font-weight: 700;
+  height: 2.1em;
+  width: 5em;
+  position:relative;
 }
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #fff;
+    outline: 0;
+    background-color: rgb(13, 60, 109);
+    border: 2px solid rgb(13, 60, 109);
+    text-shadow:2px 4px 2px rgb(60, 77, 95);
+  }
 
-.btn-primary:active{
-  transform: translate(0px,5px);
-  -webkit-transform: translate(0px,5px);
-	border-bottom: 1px solid;
-}
+  @media screen and (max-width: 768px){
+    .btn-primary {
+      box-sizing: border-box;
+      appearance: none;
+      background-color: transparent;
+      border: 2px solid rgb(13, 60, 109);
+      border-radius: 0.6em;
+      color: rgb(13, 60, 109);
+      cursor: pointer;
+      display: flex;
+      align-self: center;
+      font-size: 0.7em;
+      line-height: 1;
+      margin: 0 auto;
+      padding: 0 auto;
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Do Hyeon', sans-serif;
+      font-weight: 700;
+      height: 2em;
+      width: 6em;
+      position:relative;
+    }
 
+    .btn-primary:hover,
+    .btn-primary:focus {
+        color: #fff;
+        outline: 0;
+        background-color: rgb(13, 60, 109);
+        border: 2px solid rgb(13, 60, 109);
+      }
+  }
 /* apply button end */
 
 footer{
