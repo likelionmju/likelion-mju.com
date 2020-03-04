@@ -23,6 +23,15 @@
 
 <body>
     {% block content %}
+    <header class="masthead mb-auto"></header>
+      <div class="inner">
+          {% if message %}
+          <div class="alert alert-light" role="alert" style="background-color: #F8F8F8;"> 
+            <b style="color: black;"><span style="color: red;">[Error]</span> {{ message }}</b>
+          </div>
+          {% endif %}
+      </div>
+    </header>
     <form class="form-horizontal" role="form" method="post">
         {%csrf_token%}
         <div class="form-group" id="divId">
