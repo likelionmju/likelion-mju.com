@@ -34,7 +34,7 @@ def apply(request):
         try:
             application = request.user.application
             if application.is_submit == True:
-                return render(request, 'home.html')
+                return render(request, 'home.html', {"message": "지원서 제출이 완료되었습니다."})
 
             return render(request, 'apply.html', {
                 'field': application.field,

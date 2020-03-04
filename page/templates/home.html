@@ -28,15 +28,13 @@
 
 <body class="text-center">
   <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-    <header class="masthead mb-auto">
+    <header class="masthead mb-auto"></header>
       <div class="inner">
-        <h3 class="masthead-brand">
           {% if message %}
-          <div class="alert alert-light" role="alert"> 
-            [안내] {{ message }}
+          <div class="alert alert-light" role="alert" style="background-color: #F8F8F8;"> 
+            <b style="color: black;"><span style="color: red;">[안내]</span> {{ message }}</b>
           </div>
           {% endif %}
-        </h3>
       </div>
     </header>
 
