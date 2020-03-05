@@ -71,7 +71,9 @@ def detail(request, id):
     if request.user.is_superuser:
         application = Application.objects.get(pk=id)
         return render(request, 'apply.html', {
-            'field': application.field,
+                'mode': 'admin',
+                'user': application.user,
+                'field': application.field,
                 'answer1': application.answers['answer1'],
                 'answer2': application.answers['answer2'],
                 'answer3': application.answers['answer3'],

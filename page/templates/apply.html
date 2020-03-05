@@ -37,6 +37,17 @@
             <form action="{% url 'apply' %}" id="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 
+                {% if mode == 'admin' %}
+                    학번: {{user.number}}<br>
+                    이름: {{user.name}}<br>
+                    성별: {{user.gender}}<br>
+                    이메일: {{user.email}}<br>
+                    전화번호: {{user.phone}}<br>
+                    단과대학: {{user.college}}<br>
+                    학과: {{user.department}}<br>
+                    학년: {{user.grade}}<br>
+                {% endif %}
+
                 <div class="input-box">
                     <label for="field">1. 지원 분야를 선택해 주세요. (하나의 분야에만 지원 가능)</label>
                     <div class="radio">
@@ -82,11 +93,13 @@
                     <input type="radio" id="date" name="date" required="required" {% if date == "모두 가능" %} checked {% endif %} value="모두 가능">모두 가능
                     </div>
                 </div>
-
+                
+                {% if not mode == 'admin' %}
                 <div class="btn">
                     <button class="save" type="submit" name="btn" value="save" class="btn_line">임시저장</button>
                     <button class="submit" type="button" name="btn" value="submit" class="btn_line" onclick="button_event();">지원서 제출하기</button>
                 </div>
+                {% endif %}
             </form>
         </div>
     </main>
