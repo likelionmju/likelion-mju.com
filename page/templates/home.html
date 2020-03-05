@@ -32,7 +32,11 @@
       <div class="inner">
           {% if message %}
           <div class="alert alert-light" role="alert" style="background-color: #F8F8F8;"> 
-            <b style="color: black;"><span style="color: red;">[안내]</span> {{ message }}</b>
+            <b style="color: black;"><span style="color: red;">[안내]</span> {{ message }} 
+              {% if pk %}
+                <a href="{% url 'resend' pk %}">재전송</a>
+              {% endif %}
+            </b>
           </div>
           {% endif %}
       </div>

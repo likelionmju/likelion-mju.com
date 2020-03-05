@@ -24,7 +24,7 @@ def login(request):
                     context.update({'error':'incorrect password'})
             else:
                 message = "이메일 인증이 완료되지 않았습니다."
-                return render(request, 'home.html', {'message':message})
+                return render(request, 'home.html', {'message':message, 'pk':user.pk})
         else:
             context.update({'error':'undefined user'})
     return render(request, 'login.html', context)
@@ -56,7 +56,7 @@ def register(request):
                 'token': token,
             })
             message = "입력하신 이메일로 인증링크를 발송하였습니다."
-            return render(request, 'home.html', {'message':message})
+            return render(request, 'home.html', {'message':message, 'pk':user.pk})
         else:
             message = "패스워드 확인에 실패했습니다. 다시 입력해 주시기 바랍니다."
             return render(request, 'register.html', {'message':message})
@@ -80,3 +80,16 @@ def authenticate(request, uidb64, token):
         return render(request, 'home.html', {'message':message})
     message = "잘못된 접근입니다."
     return render(request, 'home.html', {'message':message})
+
+def resend(request, pk):
+    user = User.objects.get(pk=pk)
+    current_site = get_current_site(request)
+    token = PasswordResetTokenGenerator().make_token(user)
+    sendmail(user.email, {
+        'user': user,
+        'domain': current_site.domain,
+        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+        'token': token,
+    })
+    message = "입력하신 이메일로 인증링크를 발송하였습니다."
+    return render(request, 'home.html', {'message':message, 'pk':pk})
