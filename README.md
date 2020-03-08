@@ -1,4 +1,4 @@
-mjuseoul.likelion.org
+likelion-mju.com
 ===
 
 📖 Introduction
@@ -72,6 +72,7 @@ $ git push origin <branch_name>
 🧐 What's inside?
 ---
     .
+    ├── .config
     ├── account
     ├── config
     ├── page
@@ -80,12 +81,13 @@ $ git push origin <branch_name>
     ├── README.md
     └── requirements.txt
 
-1. `/account`: account app
-2. `/config`: setup files in project
-3. `/page`: page app
-4. `.gitignore`: define what should be ignored in git
-5. `manage.py`: django command-line util
-6. `requirement.txt`: list of pip-packages to install
+1. `/.config`: setup files to deploy
+2. `/account`: account app
+3. `/config`: setup files in project
+4. `/page`: page app
+5. `.gitignore`: define what should be ignored in git
+6. `manage.py`: django command-line util
+7. `requirement.txt`: list of pip-packages to install
 
 📝 License
 ---
