@@ -38,14 +38,14 @@
                 {% csrf_token %}
                 
                 {% if mode == 'admin' %}
-                    학번: {{user.number}}<br>
-                    이름: {{user.name}}<br>
-                    성별: {{user.gender}}<br>
-                    이메일: {{user.email}}<br>
-                    전화번호: {{user.phone}}<br>
-                    단과대학: {{user.college}}<br>
-                    학과: {{user.department}}<br>
-                    학년: {{user.grade}}<br>
+                  <div class="user-info">학번: {{user.number}}</div>
+                  <div class="user-info">이름: {{user.name}}</div>
+                  <div class="user-info">성별: {{user.gender}}</div>
+                  <div class="user-info">이메일: {{user.email}}</div>
+                  <div class="user-info">전화번호: {{user.phone}}</div>
+                  <div class="user-info">단과대학: {{user.college}}</div>
+                  <div class="user-info">학과: {{user.department}}</div>
+                  <div class="user-info">학년: {{user.grade}}</div>
                 {% endif %}
 
                 <div class="input-box">
