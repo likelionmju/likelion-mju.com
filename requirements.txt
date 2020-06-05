@@ -1,5 +1,5 @@
 asgiref==3.2.3
-Django==3.0.3
+Django==3.0.7
 django-appconf==1.0.3
 jsonfield==3.1.0
 Pillow==7.0.0
